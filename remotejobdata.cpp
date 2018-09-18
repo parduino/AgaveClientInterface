@@ -40,15 +40,22 @@ RemoteJobData::RemoteJobData()
     myID = "ERROR";
     myName = "ERROR";
     myApp = "ERROR";
-    myState = "APP_INIT";
+    myState = "INVALID";
 }
 
-RemoteJobData::RemoteJobData(QString jobID, QString jobName, QString appName, QDateTime createTime)
+RemoteJobData::RemoteJobData(QString jobID, QString jobName, QString appName, QString newState, QDateTime createTime)
 {
     myID = jobID;
     myName = jobName;
     myApp = appName;
     myCreatedTime = createTime;
+    myState = newState;
+    jobEntryValid = true;
+}
+
+bool RemoteJobData::isValidEntry()
+{
+    return jobEntryValid;
 }
 
 QString RemoteJobData::getID() const
@@ -73,33 +80,17 @@ QDateTime RemoteJobData::getTimeCreated() const
 
 QString RemoteJobData::getState() const
 {
+    if (!jobEntryValid) return "INVALID";
     return myState;
 }
 
 bool RemoteJobData::inTerminalState() const
 {
+    if (!jobEntryValid) return true;
     if (myState == "FINISHED") return true;
     if (myState == "FAILED") return true;
     if (myState == "STOPPED") return true;
     return false;
-}
-
-void RemoteJobData::setState(QString newState)
-{
-    myState = newState;
-}
-
-void RemoteJobData::updateData(RemoteJobData newData)
-{
-    myID = newData.myID;
-    myName = newData.myName;
-    myState = newData.myState;
-    myApp = newData.myApp;
-    myCreatedTime = newData.myCreatedTime;
-    if (newData.detailsLoaded())
-    {
-        setDetails(newData.inputList, newData.paramList);
-    }
 }
 
 bool RemoteJobData::detailsLoaded() const
@@ -122,4 +113,10 @@ void RemoteJobData::setDetails(QMap<QString, QString> inputs, QMap<QString, QStr
     haveDatails = true;
     inputList = inputs;
     paramList = params;
+}
+
+RemoteJobData RemoteJobData::nil()
+{
+    RemoteJobData ret;
+    return ret;
 }

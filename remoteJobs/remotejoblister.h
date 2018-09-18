@@ -37,6 +37,7 @@
 #define REMOTEJOBLISTER_H
 
 #include <QTableView>
+#include "remotejobdata.h"
 
 class JobOperator;
 
@@ -45,9 +46,19 @@ class RemoteJobLister : public QTableView
     Q_OBJECT
 public:
     explicit RemoteJobLister(QWidget *parent = nullptr);
-    void setOperator(JobOperator *myOperator);
+    ~RemoteJobLister();
+    void setOperator(JobOperator * newOperator);
+
+    RemoteJobData getSelectedJob();
+
+public slots:
+    void jobEntryTouched(QModelIndex itemTouched);
+
+signals:
+    void newJobSelected(RemoteJobData newFileData);
 
 private:
+    JobOperator * myOperator = nullptr;
 };
 
 #endif // REMOTEJOBLISTER_H

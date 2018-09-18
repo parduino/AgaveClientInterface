@@ -44,24 +44,24 @@ class RemoteJobData
 {
 public:
     RemoteJobData();
-    RemoteJobData(QString jobID, QString jobName, QString appName, QDateTime createTime);
+    RemoteJobData(QString jobID, QString jobName, QString appName, QString newState, QDateTime createTime);
+
+    bool isValidEntry();
 
     QString getID() const;
     QString getName() const;
     QString getApp() const;
-
     QDateTime getTimeCreated() const;
-
     QString getState() const;
+
     bool inTerminalState() const;
-    void setState(QString newState);
-    void updateData(RemoteJobData newData);
 
     bool detailsLoaded() const;
-
     QMap<QString, QString> getInputs() const;
     QMap<QString, QString> getParams() const;
     void setDetails(QMap<QString, QString> inputs, QMap<QString, QString> params);
+
+    static RemoteJobData nil();
 
 private:
     QString myID;
@@ -75,6 +75,7 @@ private:
     QMap<QString, QString> paramList;
 
     bool haveDatails = false;
+    bool jobEntryValid = false;
 };
 
 #endif // REMOTEJOBDATA_H

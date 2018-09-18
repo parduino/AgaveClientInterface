@@ -36,30 +36,33 @@
 #include "joblistnode.h"
 #include "joboperator.h"
 
-#include "remoteJobs/linkedstandarditem.h"
+#include "remoteJobs/jobstandarditem.h"
 
 #include "remotedatainterface.h"
 
-JobListNode::JobListNode(RemoteJobData newData, QStandardItemModel * theModel, JobOperator * parent) : QObject(parent)
+JobListNode::JobListNode(RemoteJobData newData, JobOperator * parent) : QObject(parent)
 {
-    myModel = theModel;
-    if (myModel == nullptr)
-    {
-        this->deleteLater();
-        return;
-    }
     myOperator = parent;
+    if (myOperator == nullptr)
+    {
+        qFatal("Job List Node objects must have a JobOperator parent.");
+    }
 
     setData(newData);
 }
 
 JobListNode::~JobListNode()
 {
-    if (myModelItem != nullptr)
+    if (!myModelRow.isEmpty())
     {
-        myModel->removeRow(myModelItem->row());
-        myModelItem = nullptr;
+        myOperator->getItemModel()->removeRow(myModelRow.first()->row());
+        myModelRow.clear();
     }
+}
+
+bool JobListNode::isSameJob(RemoteJobData compareJob)
+{
+    return (myData.getID() == compareJob.getID());
 }
 
 void JobListNode::setData(RemoteJobData newData)
@@ -69,71 +72,29 @@ void JobListNode::setData(RemoteJobData newData)
     {
         signalChange = true;
     }
-    myData.updateData(newData);
+    myData = newData;
 
-    QList<QStandardItem *> myModelRow;
-
-    if (myModelItem == nullptr)
+    if (myModelRow.isEmpty())
     {
-        for (int i = 0; i < myModel->columnCount(); i++)
+        int i = 0;
+        QStandardItem * headerItem = myOperator->getItemModel()->horizontalHeaderItem(i);
+        while (headerItem != nullptr)
         {
-            if (i == 0)
-            {
-                myModelItem = new LinkedStandardItem(this);
-                myModelRow.append(myModelItem);
-            }
-            else
-            {
-                myModelRow.append(new LinkedStandardItem(this));
-            }
+            QString headerText = headerItem->text();
+
+            myModelRow.append(new JobStandardItem(myData, headerText));
+
+            i++;
+            headerItem = myOperator->getItemModel()->horizontalHeaderItem(i);
         }
 
-        myModel->insertRow(0, myModelRow);
-
-    }
-    else
-    {
-        for (int i = 0; i < myModel->columnCount(); i++)
-        {
-            myModelRow.append(myModel->item(myModelItem->row(),i));
-        }
+        myOperator->getItemModel()->insertRow(0, myModelRow);
     }
 
-    int i = 0;
-    QStandardItem * headerItem = myModel->horizontalHeaderItem(i);
-    while (headerItem != nullptr)
+    for (QStandardItem * anItem : myModelRow)
     {
-        QString headerText = headerItem->text();
-        QStandardItem * dataEntry = myModelRow.at(i);
-        if (dataEntry == nullptr)
-        {
-            qCDebug(jobManager, "ERROR: Column Mismatch in job list.");
-            return;
-        }
-
-        if (headerText == "Task Name")
-        {
-            dataEntry->setText(myData.getName());
-        }
-        else if (headerText == "State")
-        {
-            dataEntry->setText(myData.getState());
-        }
-        else if (headerText == "Agave App")
-        {
-            dataEntry->setText(myData.getApp());
-        }
-        else if (headerText == "Time Created")
-        {
-            dataEntry->setText(myData.getTimeCreated().toString());
-        }
-        else if (headerText == "Agave ID")
-        {
-            dataEntry->setText(myData.getID());
-        }
-
-        i++;
-        headerItem = myModel->horizontalHeaderItem(i);
+        JobStandardItem * theModelEntry = dynamic_cast<JobStandardItem *>(anItem);
+        theModelEntry->updateText(myData);
     }
 
     if (signalChange)
@@ -142,9 +103,9 @@ void JobListNode::setData(RemoteJobData newData)
     }
 }
 
-const RemoteJobData *JobListNode::getData()
+const RemoteJobData JobListNode::getData()
 {
-    return &myData;
+    return myData;
 }
 
 bool JobListNode::haveDetails()
@@ -186,7 +147,7 @@ void JobListNode::deliverJobDetails(RequestState taskState, RemoteJobData fullJo
         return;
     }
 
-    if (fullJobData.getID() != myData.getID())
+    if (!isSameJob(fullJobData))
     {
         qCDebug(jobManager, "ERROR: Job data and detail request mismatch.");
         return;

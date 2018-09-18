@@ -108,6 +108,11 @@ QMap<QString, QByteArray> * AgaveTaskReply::getTaskParamList()
     return &taskParamList;
 }
 
+void AgaveTaskReply::setAsUnconnectedReply()
+{
+    expectsSignalConnect = false;
+}
+
 void AgaveTaskReply::setDelayedDatalessReply(RequestState replyState)
 {
     pendingReply = replyState;
@@ -129,11 +134,7 @@ void AgaveTaskReply::processDatalessReply(RequestState replyState)
         qCDebug(remoteInterface, "Agave Task Fail: %s", qPrintable(RemoteDataInterface::interpretRequestState(replyState)));
     }
 
-    if (myGuide->getTaskID() == "changeDir")
-    {
-        emit haveCurrentRemoteDir(replyState, QString());
-    }
-    else if (myGuide->getTaskID() == "fullAuth")
+    if (myGuide->getTaskID() == "fullAuth")
     {
         emit haveAuthReply(replyState);
     }
@@ -147,9 +148,9 @@ void AgaveTaskReply::processDatalessReply(RequestState replyState)
     {
         emit haveLSReply(replyState, QList<FileMetaData>());
     }
-    else if (myGuide->getTaskID() == "waitAll")
+    else if (myGuide->getTaskID() == "startedLogout")
     {
-        emit connectionsClosed(replyState);
+        emit startedLogout(replyState);
     }
     else if ((myGuide->getTaskID() == "fileUpload") || (myGuide->getTaskID() == "filePipeUpload"))
     {
@@ -189,11 +190,15 @@ void AgaveTaskReply::processDatalessReply(RequestState replyState)
     }
     else if (myGuide->getTaskID() == "getJobDetails")
     {
-        emit haveJobDetails(replyState, RemoteJobData());
+        emit haveJobDetails(replyState, RemoteJobData::nil());
     }
     else if (myGuide->getTaskID() == "stopJob")
     {
         emit haveStoppedJob(replyState);
+    }
+    else if (myGuide->getTaskID() == "deleteJob")
+    {
+        emit haveDeletedJob(replyState);
     }
     else if (myGuide->getTaskID() == "haveAgaveAppList")
     {
@@ -210,20 +215,14 @@ void AgaveTaskReply::rawNoDataNoHttpTaskComplete(RequestState replyState)
 {
     this->deleteLater();
 
-    //If this task is an INTERNAL task, then the result is redirected to the manager
-    if (myGuide->isInternal())
-    {
-        myManager->handleInternalTask(this, replyState);
-        return;
-    }
-
     if (myGuide->getRequestType() != AgaveRequestType::AGAVE_NONE)
     {
         qCDebug(remoteInterface, "ERROR: no-http no-data reply signaled for wrong task type");
         processDatalessReply(RequestState::INTERNAL_ERROR);
     }
-    signalConnectDelay();
-    processDatalessReply(replyState);
+
+    pendingReply = replyState;
+    rawPassThruTaskComplete();
 }
 
 void AgaveTaskReply::rawPassThruTaskComplete()
@@ -474,6 +473,10 @@ void AgaveTaskReply::rawHttpTaskComplete()
     {
         emit haveStoppedJob(RequestState::GOOD);
     }
+    else if (myGuide->getTaskID() == "deleteJob")
+    {
+        emit haveDeletedJob(RequestState::GOOD);
+    }
     else if (myGuide->getTaskID() == "getAgaveList")
     {
         //TODO More error checking here
@@ -574,25 +577,23 @@ QList<RemoteJobData> AgaveTaskReply::parseJSONjobMetaData(QJsonArray rawJobList)
 
 RemoteJobData AgaveTaskReply::parseJSONjobDetails(QJsonObject rawJobData, bool haveDetails)
 {
-    RemoteJobData err;
-    if (!rawJobData.contains("id")) return err;
-    if (!rawJobData.contains("name")) return err;
-    if (!rawJobData.contains("appId")) return err;
-    if (!rawJobData.contains("created")) return err;
-    if (!rawJobData.contains("status")) return err;
+    if (!rawJobData.contains("id")) return RemoteJobData::nil();
+    if (!rawJobData.contains("name")) return RemoteJobData::nil();
+    if (!rawJobData.contains("appId")) return RemoteJobData::nil();
+    if (!rawJobData.contains("created")) return RemoteJobData::nil();
+    if (!rawJobData.contains("status")) return RemoteJobData::nil();
 
     if (haveDetails)
     {
-        if (!rawJobData.contains("inputs")) return err;
-        if (!rawJobData.contains("parameters")) return err;
+        if (!rawJobData.contains("inputs")) return RemoteJobData::nil();
+        if (!rawJobData.contains("parameters")) return RemoteJobData::nil();
     }
 
     RemoteJobData ret(rawJobData.value("id").toString(),
                       rawJobData.value("name").toString(),
                       rawJobData.value("appId").toString(),
+                      rawJobData.value("status").toString(),
                       parseAgaveTime(rawJobData.value("created").toString()));
-
-    ret.setState(rawJobData.value("status").toString());
 
     if (haveDetails)
     {
@@ -715,6 +716,8 @@ QMap<QString, QString> AgaveTaskReply::convertVarMapToString(QMap<QString, QVari
 
 void AgaveTaskReply::signalConnectDelay()
 {
+    if (!expectsSignalConnect) return;
+
     //This method is a stopgap against a reply object finishing before
     //being connected to anything. This should never happen.
     int failTrys = 0;
@@ -732,8 +735,7 @@ void AgaveTaskReply::signalConnectDelay()
 
 bool AgaveTaskReply::anySignalConnect()
 {
-    if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveCurrentRemoteDir))) return true;
-    if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::connectionsClosed))) return true;
+    if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::startedLogout))) return true;
 
     if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveAuthReply))) return true;
     if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveLSReply))) return true;
@@ -754,6 +756,7 @@ bool AgaveTaskReply::anySignalConnect()
     if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveJobList))) return true;
     if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveJobDetails))) return true;
     if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveStoppedJob))) return true;
+    if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveDeletedJob))) return true;
 
     if (isSignalConnected(QMetaMethod::fromSignal(&AgaveTaskReply::haveAgaveAppList))) return true;
 

@@ -59,6 +59,7 @@ public:
     ~AgaveTaskReply();
 
     QMap<QString, QByteArray> *getTaskParamList();
+    virtual void setAsUnconnectedReply();
 
     //-------------------------------------------------
     //Agave specific:
@@ -105,6 +106,8 @@ private:
     //delayed dataless reply store:
     bool hasPendingReply = false;
     RequestState pendingReply = RequestState::INTERNAL_ERROR;
+
+    bool expectsSignalConnect = true;
 
     QMap<QString, QByteArray> taskParamList;
 };

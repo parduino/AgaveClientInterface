@@ -41,7 +41,7 @@
 #include "fileoperator.h"
 #include "filetreenode.h"
 
-RemoteFileModel::RemoteFileModel(QObject * parent) : QObject(parent)
+RemoteFileModel::RemoteFileModel(QObject *parent) : QObject(parent)
 {
     theModel.setColumnCount(tableNumCols);
     theModel.setHorizontalHeaderLabels(shownHeaderLabelList);

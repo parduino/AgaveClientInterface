@@ -50,6 +50,7 @@ class RemoteJobLister;
 class JobListNode;
 class RemoteDataReply;
 
+enum class RemoteDataInterfaceState;
 enum class RequestState;
 
 Q_DECLARE_LOGGING_CATEGORY(jobManager)
@@ -57,38 +58,56 @@ Q_DECLARE_LOGGING_CATEGORY(jobManager)
 class JobOperator : public QObject
 {
     Q_OBJECT
+
+    friend class JobListNode;
+    friend class RemoteJobLister;
+
 public:
-    explicit JobOperator(QObject * parent);
+    explicit JobOperator(RemoteDataInterface * theDataInterface, QObject * parent);
     ~JobOperator();
 
-    void resetJobData(RemoteDataInterface * theDataInterface);
-    void linkToJobLister(RemoteJobLister * newLister);
-
-    QMap<QString, const RemoteJobData *> getJobsList();
-
     void requestJobDetails(const RemoteJobData *toFetch);
-    void underlyingJobChanged();
+    void deleteJobDataEntry(const RemoteJobData *toDelete);
 
-    const RemoteJobData * findJobByID(QString idToFind);
+    QMap<QString, RemoteJobData> getJobsList();
+    const RemoteJobData findJobByID(QString idToFind);
+
+    void demandJobDataRefresh();
+    bool currentlyRefreshingJobs();
+    bool currentlyPerformingJobOperation();
 
 signals:
     void newJobData();
+    void jobOpStarted();
+    void jobOpDone(RequestState opState, QString err_msg);
 
 public slots:
-    void demandJobDataRefresh();
+    void interfaceHasNewState(RemoteDataInterfaceState newState);
+
+protected:
+    void linkToJobLister(RemoteJobLister * newLister);
+    void disconnectJobLister(RemoteJobLister * oldLister);
+
+    void underlyingJobChanged();
+    QStandardItemModel * getItemModel();
 
 private slots:
     void refreshRunningJobList(RequestState replyState, QList<RemoteJobData> theData);
+    void jobOperationFollowup(RequestState replyState);
 
 private:
     static bool listHasJobId(QList<RemoteJobData> theData, QString toFind);
+    JobListNode * getRealNode(const RemoteJobData *toFetch);
 
     RemoteDataInterface * myInterface;
 
     QMap<QString, JobListNode *> jobData;
-    RemoteDataReply * currentJobReply = nullptr;
+    RemoteDataReply * currentJobRefreshReply = nullptr;
+    RemoteDataReply * currentJobOpReply = nullptr;
 
     QStandardItemModel theJobList;
+
+    QList<RemoteJobLister *> linkedListerWidgets;
 };
 
 #endif // JOBOPERATOR_H

@@ -35,11 +35,62 @@
 
 #include "remotejoblister.h"
 
-#include "remoteJobs/joboperator.h"
+#include "joboperator.h"
+#include "jobstandarditem.h"
 
-RemoteJobLister::RemoteJobLister(QWidget *parent) : QTableView(parent) {}
-
-void RemoteJobLister::setOperator(JobOperator * myOperator)
+RemoteJobLister::RemoteJobLister(QWidget *parent) : QTableView(parent)
 {
-    myOperator->linkToJobLister(this);
+    QObject::connect(this, SIGNAL(clicked(QModelIndex)), this, SLOT(jobEntryTouched(QModelIndex)));
+    this->setEditTriggers(QTableView::NoEditTriggers);
+}
+
+RemoteJobLister::~RemoteJobLister()
+{
+    setOperator(nullptr);
+}
+
+void RemoteJobLister::setOperator(JobOperator * newOperator)
+{
+    if (myOperator != nullptr)
+    {
+        myOperator->disconnectJobLister(this);
+    }
+    myOperator = newOperator;
+
+    if (myOperator != nullptr)
+    {
+        myOperator->linkToJobLister(this);
+    }
+}
+
+RemoteJobData RemoteJobLister::getSelectedJob()
+{
+    QModelIndexList indexList = this->selectedIndexes();
+
+    if (indexList.isEmpty()) return RemoteJobData::nil();
+    QStandardItemModel * theModel = qobject_cast<QStandardItemModel *>(this->model());
+    if (theModel == nullptr) return RemoteJobData::nil();
+
+    QStandardItem * theItem = theModel->itemFromIndex(indexList.at(0));
+
+    JobStandardItem * retNode = dynamic_cast<JobStandardItem *>(theItem);
+    if (retNode == nullptr) return RemoteJobData::nil();
+    return retNode->getJobData();
+}
+
+void RemoteJobLister::jobEntryTouched(QModelIndex itemTouched)
+{
+    this->selectionModel()->clearSelection();
+    QStandardItemModel * dataStore = qobject_cast<QStandardItemModel *>(this->model());
+    QStandardItem * selectedItem = dataStore->itemFromIndex(itemTouched);
+    if (selectedItem == nullptr)
+    {
+        return;
+    }
+
+    int rowNum = selectedItem->row();
+    this->selectionModel()->select(QItemSelection(dataStore->item(rowNum,0)->index(),
+                                                  dataStore->item(rowNum,dataStore->columnCount()-1)->index()),
+                                   QItemSelectionModel::Select);
+    emit newJobSelected(getSelectedJob());
 }

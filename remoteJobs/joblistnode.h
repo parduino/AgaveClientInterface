@@ -39,7 +39,7 @@
 #include <QObject>
 #include <QStandardItem>
 
-class LinkedStandardItem;
+class JobStandardItem;
 class RemoteDataReply;
 class JobOperator;
 enum class RequestState;
@@ -49,26 +49,31 @@ enum class RequestState;
 class JobListNode : public QObject
 {
     Q_OBJECT
+
+    friend class JobOperator;
+
 public:
-    explicit JobListNode(RemoteJobData newData, QStandardItemModel * theModel, JobOperator *parent);
+    explicit JobListNode(RemoteJobData newData, JobOperator *parent);
     ~JobListNode();
 
-    void setData(RemoteJobData newData);
-    const RemoteJobData * getData();
+protected:
+    const RemoteJobData getData();
     bool haveDetails();
-    void setDetails(QMap<QString, QString> inputs, QMap<QString, QString> params);
 
+    bool isSameJob(RemoteJobData compareJob);
+    void setData(RemoteJobData newData);
     bool haveDetailTask();
     void setDetailTask(RemoteDataReply * newTask);
 
 private slots:
     void deliverJobDetails(RequestState taskState, RemoteJobData fullJobData);
+    void setDetails(QMap<QString, QString> inputs, QMap<QString, QString> params);
 
 private:
     JobOperator * myOperator;
-    QStandardItemModel * myModel = nullptr;
-    LinkedStandardItem * myModelItem = nullptr;
     RemoteJobData myData;
+
+    QList<QStandardItem *> myModelRow;
 
     RemoteDataReply * myDetailTask = nullptr;
 };

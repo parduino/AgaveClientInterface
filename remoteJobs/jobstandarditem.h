@@ -33,19 +33,23 @@
 // Contributors:
 // Written by Peter Sempolinski, for the Natural Hazard Modeling Laboratory, director: Ahsan Kareem, at Notre Dame
 
-#include "linkedstandarditem.h"
+#ifndef LINKEDSTANDARDITEM_H
+#define LINKEDSTANDARDITEM_H
 
-LinkedStandardItem::LinkedStandardItem(QObject * linkedObject) : QStandardItem()
-{
-    myLinkedObject = linkedObject;
-}
+#include <QStandardItem>
+#include "remotejobdata.h"
 
-LinkedStandardItem::LinkedStandardItem(QObject * linkedObject, QString text) : QStandardItem(text)
+class JobStandardItem : public QStandardItem
 {
-    myLinkedObject = linkedObject;
-}
+public:
+    JobStandardItem(RemoteJobData theJobData, QString relevantHeader);
+    RemoteJobData getJobData();
 
-QObject * LinkedStandardItem::getLinkedObject()
-{
-    return myLinkedObject;
-}
+    void updateText(RemoteJobData newData);
+
+private:
+    RemoteJobData myJobData;
+    QString myColumnHeader;
+};
+
+#endif // LINKEDSTANDARDITEM_H

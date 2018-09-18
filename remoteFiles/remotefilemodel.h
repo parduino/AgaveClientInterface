@@ -52,7 +52,7 @@ class RemoteFileModel : public QObject
 {
     Q_OBJECT
 
-    friend class RemoteFileTree;
+    friend class FileOperator;
 
 public:
     RemoteFileModel(QObject *parent = nullptr);

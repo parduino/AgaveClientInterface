@@ -38,15 +38,24 @@
 #include "remotefiletree.h"
 #include "filetreenode.h"
 #include "filenoderef.h"
+#include "remotefilemodel.h"
 
 #include "filemetadata.h"
 #include "remotedatainterface.h"
 
 Q_LOGGING_CATEGORY(fileManager, "File Manager")
 
-FileOperator::FileOperator(QObject *parent) : QObject(parent)
+FileOperator::FileOperator(RemoteDataInterface * theInterface, QObject *parent) : QObject(parent)
 {
-    //Note: will be deconstructed with parent
+    myInterface = theInterface;
+    if (myInterface == nullptr)
+    {
+        qFatal("Cannot create JobOperator object with null remote interface.");
+    }
+    myModel = new RemoteFileModel(this);
+    QObject::connect(this, SIGNAL(fileSystemChange(FileNodeRef)), myModel, SLOT(newFileData(FileNodeRef)), Qt::QueuedConnection);
+
+    QObject::connect(myInterface, SIGNAL(connectionStateChanged(RemoteDataInterfaceState)), this, SLOT(interfaceHasNewState(RemoteDataInterfaceState)));
 }
 
 FileOperator::~FileOperator()
@@ -54,22 +63,9 @@ FileOperator::~FileOperator()
     delete rootFileNode;
 }
 
-void FileOperator::resetFileData(RemoteDataInterface *parent, QString rootFolder)
+void FileOperator::connectFileTreeWidget(RemoteFileTree * connectedWidget)
 {
-    myInterface = parent;
-    myRootFolderName = rootFolder;
-    resetFileData();
-}
-
-void FileOperator::resetFileData()
-{
-    if (rootFileNode != nullptr)
-    {
-        rootFileNode->deleteLater();
-    }
-    rootFileNode = new FileTreeNode(myRootFolderName, this);
-
-    enactRootRefresh();
+    connectedWidget->setModel(myModel->getRawModel());
 }
 
 FileTreeNode * FileOperator::getFileNodeFromNodeRef(const FileNodeRef &thedata, bool verifyTimestamp)
@@ -118,6 +114,16 @@ void FileOperator::enactFolderRefresh(const FileNodeRef &selectedNode, bool clea
 bool FileOperator::operationIsPending()
 {
     return (myState != FileOperatorState::IDLE);
+}
+
+void FileOperator::interfaceHasNewState(RemoteDataInterfaceState newState)
+{
+    if (newState != RemoteDataInterfaceState::CONNECTED) return;
+
+    myRootFolderName =  myInterface->getUserName();
+    rootFileNode = new FileTreeNode(myRootFolderName, this);
+
+    enactRootRefresh();
 }
 
 void FileOperator::sendDeleteReq(const FileNodeRef &selectedNode)
@@ -806,15 +812,6 @@ bool FileOperator::nodeIsRoot(const FileNodeRef &theFile)
     return theNode->isRootNode();
 }
 
-void FileOperator::quickInfoPopup(QString infoText)
-{
-    //TODO: Slated for deletion, errors to be passed in status object
-    QMessageBox infoMessage;
-    infoMessage.setText(infoText);
-    infoMessage.setIcon(QMessageBox::Information);
-    infoMessage.exec();
-}
-
 bool FileOperator::deletePopup(const FileNodeRef &toDelete)
 {
     QMessageBox deleteQuery;
@@ -830,6 +827,11 @@ bool FileOperator::deletePopup(const FileNodeRef &toDelete)
           return false;
     }
     return false;
+}
+
+RemoteFileItem * FileOperator::getItemByFile(FileNodeRef toFind)
+{
+    return myModel->getItemByFile(toFind);
 }
 
 void FileOperator::recursiveDownloadProcessRetry()

@@ -16,8 +16,8 @@ SOURCES += \
     $$PWD/remoteFiles/selectedfilelabel.cpp \
     $$PWD/remoteJobs/joblistnode.cpp \
     $$PWD/remoteJobs/joboperator.cpp \
-    $$PWD/remoteJobs/linkedstandarditem.cpp \
-    $$PWD/remoteJobs/remotejoblister.cpp
+    $$PWD/remoteJobs/remotejoblister.cpp \
+    $$PWD/remoteJobs/jobstandarditem.cpp
 
 HEADERS += \
     $$PWD/agaveInterfaces/agavehandler.h \
@@ -35,8 +35,8 @@ HEADERS += \
     $$PWD/remoteFiles/selectedfilelabel.h \
     $$PWD/remoteJobs/joblistnode.h \
     $$PWD/remoteJobs/joboperator.h \
-    $$PWD/remoteJobs/linkedstandarditem.h \
-    $$PWD/remoteJobs/remotejoblister.h
+    $$PWD/remoteJobs/remotejoblister.h \
+    $$PWD/remoteJobs/jobstandarditem.h
 
 DISTFILES += \
     $$PWD/doxygen.cfg

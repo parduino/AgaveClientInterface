@@ -33,21 +33,42 @@
 // Contributors:
 // Written by Peter Sempolinski, for the Natural Hazard Modeling Laboratory, director: Ahsan Kareem, at Notre Dame
 
-#ifndef LINKEDSTANDARDITEM_H
-#define LINKEDSTANDARDITEM_H
+#include "jobstandarditem.h"
 
-#include <QStandardItem>
-
-class LinkedStandardItem : public QStandardItem
+JobStandardItem::JobStandardItem(RemoteJobData theJobData, QString relevantHeader) : QStandardItem()
 {
-public:
-    LinkedStandardItem(QObject * linkedObject);
-    LinkedStandardItem(QObject * linkedObject, QString text);
+    myColumnHeader = relevantHeader;
 
-    QObject * getLinkedObject();
+    updateText(theJobData);
+}
 
-private:
-    QObject * myLinkedObject;
-};
+void JobStandardItem::updateText(RemoteJobData newData)
+{
+    myJobData = newData;
 
-#endif // LINKEDSTANDARDITEM_H
+    if (myColumnHeader == "Task Name")
+    {
+        this->setText(myJobData.getName());
+    }
+    else if (myColumnHeader == "State")
+    {
+        this->setText(myJobData.getState());
+    }
+    else if (myColumnHeader == "Agave App")
+    {
+        this->setText(myJobData.getApp());
+    }
+    else if (myColumnHeader == "Time Created")
+    {
+        this->setText(myJobData.getTimeCreated().toString());
+    }
+    else if (myColumnHeader == "Agave ID")
+    {
+        this->setText(myJobData.getID());
+    }
+}
+
+RemoteJobData JobStandardItem::getJobData()
+{
+    return myJobData;
+}
