@@ -84,6 +84,11 @@ QString RemoteJobData::getState() const
     return myState;
 }
 
+void RemoteJobData::setState(QString newState)
+{
+    myState = newState;
+}
+
 bool RemoteJobData::inTerminalState() const
 {
     if (!jobEntryValid) return true;

@@ -47,10 +47,23 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+/*! \brief The AgaveRequestType is enum intended for use internal to the AgaveHandler.
+ *
+ *  This enum describes the various ways an http Agave request can be sent.
+ */
+
 enum class AgaveRequestType {AGAVE_GET, AGAVE_POST, AGAVE_DELETE, AGAVE_UPLOAD, AGAVE_PIPE_UPLOAD, AGAVE_PIPE_DOWNLOAD, AGAVE_DOWNLOAD, AGAVE_PUT, AGAVE_NONE, AGAVE_APP};
 
 class AgaveTaskGuide;
 class AgaveTaskReply;
+
+/*! \brief The AgaveHandler is a class for communicating with an Agave server over an https connection.
+ *
+ *  Each AgaveHandler is one use, from initialization, to login, through multiple remote requests, to logout. If an application wishes to re-login, a new AgaveHandler object should be created.
+ *
+ *  First, the setAgaveConnectionParams meshod should be invoked, to define some basic Agave parameters, such as the remote tenant name. Then, the performAuth method should be invoked until a successful reply is given. After that, the various remote tasks can be performed. When finished, the closeAllConnections method will logout of the remote Agave server.
+ *
+ */
 
 class AgaveHandler : public RemoteDataInterface
 {
@@ -102,7 +115,7 @@ public slots:
     //and the remoteWorkingDir will be used as a input/parameter named in remoteDirParameter (optional)
 
     //For debugging purposes, to retrive the list of available Agave Apps:
-    AgaveTaskReply * getAgaveAppList();
+    AgaveTaskReply *getAgaveAppList();
 
     void setAgaveConnectionParams(QString tenant, QString clientId, QString storage);
 

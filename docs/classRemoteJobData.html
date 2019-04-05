@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: RemoteJobData Class Reference</title>
+<title>SimCenter Agave Client Interface: RemoteJobData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classRemoteJobData-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RemoteJobData Class Reference</div>  </div>
@@ -93,9 +94,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a586232ef0cbb9baab50c0f100f30b13d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a586232ef0cbb9baab50c0f100f30b13d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RemoteJobData</b> (QString jobID, QString jobName, QString appName, QDateTime createTime)</td></tr>
-<tr class="separator:a586232ef0cbb9baab50c0f100f30b13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b8053d832f119ea339ddbf29e22653"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78b8053d832f119ea339ddbf29e22653"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RemoteJobData</b> (QString jobID, QString jobName, QString appName, QString newState, QDateTime createTime)</td></tr>
+<tr class="separator:a78b8053d832f119ea339ddbf29e22653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64df3f63068402fc25a9a3ade1dd9699"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64df3f63068402fc25a9a3ade1dd9699"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidEntry</b> ()</td></tr>
+<tr class="separator:a64df3f63068402fc25a9a3ade1dd9699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee90f7614c53214b1eef0caa1c4ebc63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee90f7614c53214b1eef0caa1c4ebc63"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>getID</b> () const </td></tr>
 <tr class="separator:aee90f7614c53214b1eef0caa1c4ebc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,15 +115,12 @@ QDateTime&#160;</td><td class="memItemRight" valign="bottom"><b>getTimeCreated</
 <tr class="memitem:a01f8357d17987cb447382827d9506daf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01f8357d17987cb447382827d9506daf"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> () const </td></tr>
 <tr class="separator:a01f8357d17987cb447382827d9506daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82bd9e44bcf899353716685a6dd50439"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82bd9e44bcf899353716685a6dd50439"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>inTerminalState</b> () const </td></tr>
-<tr class="separator:a82bd9e44bcf899353716685a6dd50439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26edad74f6c27a7aae67b3814a891d5e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26edad74f6c27a7aae67b3814a891d5e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setState</b> (QString newState)</td></tr>
 <tr class="separator:a26edad74f6c27a7aae67b3814a891d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1908c8c7ec58842192673f62701886d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1908c8c7ec58842192673f62701886d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateData</b> (<a class="el" href="classRemoteJobData.html">RemoteJobData</a> newData)</td></tr>
-<tr class="separator:ad1908c8c7ec58842192673f62701886d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82bd9e44bcf899353716685a6dd50439"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82bd9e44bcf899353716685a6dd50439"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>inTerminalState</b> () const </td></tr>
+<tr class="separator:a82bd9e44bcf899353716685a6dd50439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4e61720399c70d0760ba7984c0a3478"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4e61720399c70d0760ba7984c0a3478"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>detailsLoaded</b> () const </td></tr>
 <tr class="separator:aa4e61720399c70d0760ba7984c0a3478"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,11 +133,13 @@ QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:a83217b88d6d50b4bdb647baaf7d49e57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83217b88d6d50b4bdb647baaf7d49e57"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setDetails</b> (QMap&lt; QString, QString &gt; inputs, QMap&lt; QString, QString &gt; params)</td></tr>
 <tr class="separator:a83217b88d6d50b4bdb647baaf7d49e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a3e6c32b0903a88e042c9334a28bdde49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e6c32b0903a88e042c9334a28bdde49"></a>
+static <a class="el" href="classRemoteJobData.html">RemoteJobData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nil</b> ()</td></tr>
+<tr class="separator:a3e6c32b0903a88e042c9334a28bdde49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="remotejobdata_8h_source.html">remotejobdata.h</a></li>
-<li>remotejobdata.cpp</li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

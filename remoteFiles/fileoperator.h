@@ -54,12 +54,12 @@ class RemoteFileTree;
 class FileMetaData;
 class RemoteFileModel;
 class RemoteDataInterface;
-class RemoteFileItem;
+class FileStandardItem;
+class FileRecursiveOperator;
 
 enum class RequestState;
 enum class NodeState;
-enum class FileOperatorState {IDLE, REC_UPLOAD, REC_DOWNLOAD, REC_UPLOAD_ACTIVE, ACTIVE};
-enum class RecursiveErrorCodes {NONE, MKDIR_FAIL, UPLOAD_FAIL, TYPE_MISSMATCH, LOST_FILE};
+enum class FileOperatorState {IDLE, ACTIVE, UNINITIALIZED};
 enum class RemoteDataInterfaceState;
 
 class FileOperator : public QObject
@@ -74,9 +74,10 @@ public:
     ~FileOperator();
 
     void connectFileTreeWidget(RemoteFileTree * connectedWidget);
+    void disconnectFileTreeWidget(RemoteFileTree * connectedWidget);
 
-    const FileNodeRef speculateFileWithName(QString fullPath, bool folder);
-    const FileNodeRef speculateFileWithName(const FileNodeRef &baseNode, QString addedPath, bool folder);
+    const FileNodeRef speculateFileWithName(QString fullPath, bool folder, bool loadBuffer = true);
+    const FileNodeRef speculateFileWithName(const FileNodeRef &baseNode, QString addedPath, bool folder, bool loadBuffer = true);
 
     bool operationIsPending();
 
@@ -97,18 +98,9 @@ public:
     void sendDownloadReq(const FileNodeRef &targetFile, QString localDest);
     void sendDownloadBuffReq(const FileNodeRef &targetFile);
 
-    bool performingRecursiveDownload();
-    void enactRecursiveDownload(const FileNodeRef &targetFolder, QString containingDestFolder);
-    bool performingRecursiveUpload();
-    void enactRecursiveUpload(const FileNodeRef &containingDestFolder, QString localFolderToCopy);
-    void abortRecursiveProcess();
-
-    void sendCompressReq(const FileNodeRef &selectedFolder);
-    void sendDecompressReq(const FileNodeRef &selectedFolder);
+    FileRecursiveOperator * getRecursiveOp();
 
     bool deletePopup(const FileNodeRef &toDelete);
-
-    RemoteFileItem * getItemByFile(FileNodeRef toFind);
 
 signals:
     //Note: it is very important that connections for these signals be queued
@@ -129,7 +121,11 @@ protected:
     QList<FileNodeRef> getChildList(const FileNodeRef &theFile);
     bool nodeIsRoot(const FileNodeRef &theFile);
 
+    QPersistentModelIndex getModelIndexByFile(const FileNodeRef &theFile);
+
     void enactFolderRefresh(const FileNodeRef &selectedNode, bool clearData = false);
+
+    QStandardItemModel * getStandardModel();
 
 private slots:
     void interfaceHasNewState(RemoteDataInterfaceState newState);
@@ -144,39 +140,25 @@ private slots:
     void getUploadReply(RequestState replyState, FileMetaData newFileData);
     void getDownloadReply(RequestState replyState, QString localDest);
 
-    void getCompressReply(RequestState finalState, QJsonDocument rawData);
-    void getDecompressReply(RequestState finalState, QJsonDocument rawData);
-
-    void getRecursiveUploadReply(RequestState replyState, FileMetaData newFileData);
-    void getRecursiveMkdirReply(RequestState replyState, FileMetaData newFolderData);
-
 private:
     FileTreeNode * getFileNodeFromNodeRef(const FileNodeRef &thedata, bool verifyTimestamp = true);
-
-    void recursiveDownloadProcessRetry();
-    bool recursiveDownloadRetrivalHelper(FileTreeNode * nodeToCheck); //Return true if have all data
-    bool recursiveDownloadFolderEmitHelper(QDir currentLocalDir, FileTreeNode * nodeToGet, RecursiveErrorCodes &errNum); //Return true if successful file output data
-    bool emitBufferToFile(QDir containingDir, FileTreeNode * nodeToGet, RecursiveErrorCodes &errNum); //Return true if successful file output data
-
-    void recursiveUploadProcessRetry();
-    bool recursiveUploadHelper(FileTreeNode * nodeToSend, QDir localPath, RecursiveErrorCodes &errNum); //Return true if all data sent and ls verified
-
-    void sendRecursiveCreateFolderReq(FileTreeNode * selectedNode, QString newName);
-    void sendRecursiveUploadReq(FileTreeNode * uploadTarget, QString localFile);
 
     void emitStdFileOpErr(QString errString, RequestState errState);
 
     RemoteDataInterface * myInterface = nullptr;
+    FileRecursiveOperator * myRecursiveHandler = nullptr;
+
     QString myRootFolderName;
     FileOperatorState myState = FileOperatorState::IDLE;
 
     FileTreeNode * rootFileNode = nullptr;
 
-    FileTreeNode * rememberTargetFile;
-
-    QDir recursiveLocalHead;
-    FileTreeNode * recursiveRemoteHead;
-    RemoteFileModel * myModel;
+    QStandardItemModel myModel;
+    //const int tableNumCols = 7;
+    //const QStringList shownHeaderLabelList = {"File Name","Type","Size","Last Changed",
+    //                               "Format","mimeType","Permissions"};
+    const int tableNumCols = 3;
+    const QStringList shownHeaderLabelList = {"File Name","Type","Size"};
 };
 
 #endif // FILEOPERATOR_H

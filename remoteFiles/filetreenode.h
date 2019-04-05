@@ -41,6 +41,9 @@
 #include <QObject>
 #include <QStandardItem>
 #include <QDateTime>
+#include <QPersistentModelIndex>
+
+class FileStandardItem;
 
 enum class NodeState {FILE_BUFF_LOADED, FILE_BUFF_RELOADING, FILE_BUFF_LOADING, FILE_KNOWN,
                       FILE_SPECULATE_IDLE, FILE_SPECULATE_LOADING,
@@ -71,37 +74,39 @@ public:
     NodeState getNodeState();
     FileNodeRef getFileData();
     QByteArray * getFileBuffer();
+    FileTreeNode * getParentNode();
+    QList<FileTreeNode *> getChildList();
+
     FileTreeNode * getNodeWithName(QString filename);
     FileTreeNode * getClosestNodeWithName(QString filename);
-    FileTreeNode * getParentNode();
     FileTreeNode * getNodeReletiveToNodeWithName(QString searchPath);
+    FileTreeNode * getChildNodeWithName(QString filename);
 
-    void deleteFolderContentsData();
-    void setFileBuffer(const QByteArray *newFileBuffer);
+    bool isChildOf(FileTreeNode * possibleParent);
 
     bool haveLStask();
     void setLStask(RemoteDataReply * newTask);
     bool haveBuffTask();
     void setBuffTask(RemoteDataReply * newTask);
 
-    QList<FileTreeNode *> getChildList();
-    FileTreeNode * getChildNodeWithName(QString filename);
+    void deleteFolderContentsData();
+    void setFileBuffer(const QByteArray *newFileBuffer);
 
-    bool isFolder();
-    bool isFile();
-
-    bool isChildOf(FileTreeNode * possibleParent);
+    QPersistentModelIndex getFirstModelIndex();
 
 private slots:
     void deliverLSdata(RequestState taskState, QList<FileMetaData> dataList);
     void deliverBuffData(RequestState taskState, QByteArray bufferData);
 
 private:
-    void slateNodeForDelete();
     void setNodeVisible();
     void recomputeNodeState();
 
     void changeNodeState(NodeState newState);
+    void recomputeModelItems();
+    void purgeModelItems();
+    void updateModelItems(bool folderContentsLoaded);
+
     void settimestamps();
 
     FileTreeNode * pathSearchHelper(QString filename, bool stopEarly);
@@ -130,6 +135,9 @@ private:
     bool folderContentsKnown = false;
     NodeState myState = NodeState::INIT;
     qint64 nodeTimestamp;
+
+    QList<QPersistentModelIndex> modelItemList;
+    QPersistentModelIndex decendantPlaceholderItem;
 };
 
 #endif // FILETREENODE_H

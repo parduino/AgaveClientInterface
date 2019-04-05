@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: AgaveHandler Class Reference</title>
+<title>SimCenter Agave Client Interface: AgaveHandler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -85,7 +85,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -94,16 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AgaveHandler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for AgaveHandler:</div>
-<div class="dyncontent">
-<div class="center"><img src="classAgaveHandler__inherit__graph.png" border="0" usemap="#AgaveHandler_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for AgaveHandler:</div>
-<div class="dyncontent">
-<div class="center"><img src="classAgaveHandler__coll__graph.png" border="0" usemap="#AgaveHandler_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+
+<p>The <a class="el" href="classAgaveHandler.html" title="The AgaveHandler is a class for communicating with an Agave server over an https connection. ">AgaveHandler</a> is a class for communicating with an Agave server over an https connection.  
+ <a href="classAgaveHandler.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -111,53 +103,56 @@ Public Slots</h2></td></tr>
 virtual QString&#160;</td><td class="memItemRight" valign="bottom"><b>getUserName</b> ()</td></tr>
 <tr class="separator:ae675b951707490058eb2d1f5ff2a0576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03688b4c6f5eba91cdf0e1ef4bda185b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03688b4c6f5eba91cdf0e1ef4bda185b"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>closeAllConnections</b> ()</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>closeAllConnections</b> ()</td></tr>
 <tr class="separator:a03688b4c6f5eba91cdf0e1ef4bda185b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46c2d54e589a14d43220dd7c5b07a37e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46c2d54e589a14d43220dd7c5b07a37e"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>performAuth</b> (QString uname, QString passwd)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>performAuth</b> (QString uname, QString passwd)</td></tr>
 <tr class="separator:a46c2d54e589a14d43220dd7c5b07a37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf3780dfbcfa56fe69866ef4ebe399f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf3780dfbcfa56fe69866ef4ebe399f"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>remoteLS</b> (QString dirPath)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>remoteLS</b> (QString dirPath)</td></tr>
 <tr class="separator:a0bf3780dfbcfa56fe69866ef4ebe399f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a04009fe3a2a20cddf8d35361c44ce5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a04009fe3a2a20cddf8d35361c44ce5"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>deleteFile</b> (QString toDelete)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deleteFile</b> (QString toDelete)</td></tr>
 <tr class="separator:a7a04009fe3a2a20cddf8d35361c44ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dbd07fab7814fa72fc553402e6ef646"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6dbd07fab7814fa72fc553402e6ef646"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>moveFile</b> (QString from, QString to)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>moveFile</b> (QString from, QString to)</td></tr>
 <tr class="separator:a6dbd07fab7814fa72fc553402e6ef646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae728c97c567622463e35c6a6110be4bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae728c97c567622463e35c6a6110be4bd"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>copyFile</b> (QString from, QString to)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>copyFile</b> (QString from, QString to)</td></tr>
 <tr class="separator:ae728c97c567622463e35c6a6110be4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16c5d9464d20b0c6633bde4c93e2272"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae16c5d9464d20b0c6633bde4c93e2272"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>renameFile</b> (QString fullName, QString newName)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>renameFile</b> (QString fullName, QString newName)</td></tr>
 <tr class="separator:ae16c5d9464d20b0c6633bde4c93e2272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4568160adf08ba349920869c3916d649"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4568160adf08ba349920869c3916d649"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>mkRemoteDir</b> (QString location, QString newName)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mkRemoteDir</b> (QString location, QString newName)</td></tr>
 <tr class="separator:a4568160adf08ba349920869c3916d649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39bf66411452e899e7bc7fb3e5eee9b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39bf66411452e899e7bc7fb3e5eee9b3"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>uploadFile</b> (QString location, QString localFileName)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>uploadFile</b> (QString location, QString localFileName)</td></tr>
 <tr class="separator:a39bf66411452e899e7bc7fb3e5eee9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9be4583b76b7d4d2dcdfbfe9b8f5e94e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9be4583b76b7d4d2dcdfbfe9b8f5e94e"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>uploadBuffer</b> (QString location, QByteArray fileData, QString newFileName)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>uploadBuffer</b> (QString location, QByteArray fileData, QString newFileName)</td></tr>
 <tr class="separator:a9be4583b76b7d4d2dcdfbfe9b8f5e94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac48a10b078a5f011e5394d33226a2107"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac48a10b078a5f011e5394d33226a2107"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>downloadFile</b> (QString localDest, QString remoteName)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>downloadFile</b> (QString localDest, QString remoteName)</td></tr>
 <tr class="separator:ac48a10b078a5f011e5394d33226a2107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b43b6a5bd83065835c05f420008b586"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b43b6a5bd83065835c05f420008b586"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>downloadBuffer</b> (QString remoteName)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>downloadBuffer</b> (QString remoteName)</td></tr>
 <tr class="separator:a8b43b6a5bd83065835c05f420008b586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af18358be5ea232ed4cf9fdb5ac341e9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af18358be5ea232ed4cf9fdb5ac341e9b"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>runRemoteJob</b> (QString jobName, ParamMap jobParameters, QString remoteWorkingDir, QString indivJobName=&quot;&quot;, QString archivePath=&quot;&quot;)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>runRemoteJob</b> (QString jobName, ParamMap jobParameters, QString remoteWorkingDir, QString indivJobName=&quot;&quot;, QString archivePath=&quot;&quot;)</td></tr>
 <tr class="separator:af18358be5ea232ed4cf9fdb5ac341e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc7d79df10fc3112f1480f97e85b41a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fc7d79df10fc3112f1480f97e85b41a"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>getListOfJobs</b> ()</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getListOfJobs</b> ()</td></tr>
 <tr class="separator:a1fc7d79df10fc3112f1480f97e85b41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8de5561eaec5a190b504cc1689a0dab2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8de5561eaec5a190b504cc1689a0dab2"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>getJobDetails</b> (QString IDstr)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getJobDetails</b> (QString IDstr)</td></tr>
 <tr class="separator:a8de5561eaec5a190b504cc1689a0dab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3561f02fb329664ec18e2030b8d5a0e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3561f02fb329664ec18e2030b8d5a0e8"></a>
-virtual RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>stopJob</b> (QString IDstr)</td></tr>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>stopJob</b> (QString IDstr)</td></tr>
 <tr class="separator:a3561f02fb329664ec18e2030b8d5a0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace029c8ad4f14be70cb9c5938af975db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace029c8ad4f14be70cb9c5938af975db"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deleteJob</b> (QString IDstr)</td></tr>
+<tr class="separator:ace029c8ad4f14be70cb9c5938af975db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a999ad66df8b6df0f67ed6075dadb2761"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a999ad66df8b6df0f67ed6075dadb2761"></a>
 virtual RemoteDataInterfaceState&#160;</td><td class="memItemRight" valign="bottom"><b>getInterfaceState</b> ()</td></tr>
 <tr class="separator:a999ad66df8b6df0f67ed6075dadb2761"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,20 +166,83 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>registerAgaveAppInfo<
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setAgaveConnectionParams</b> (QString tenant, QString clientId, QString storage)</td></tr>
 <tr class="separator:a445b284d88cb3f60d98fcb41b6549f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8d737953722c96a1e1552f511a0fa80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8d737953722c96a1e1552f511a0fa80"></a>
-RemoteDataReply *&#160;</td><td class="memItemRight" valign="bottom"><b>runAgaveJob</b> (QJsonDocument rawJobJSON)</td></tr>
+<a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>runAgaveJob</b> (QJsonDocument rawJobJSON)</td></tr>
 <tr class="separator:ae8d737953722c96a1e1552f511a0fa80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:af10e12192267ffe20dafbfaa3d0c7b12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af10e12192267ffe20dafbfaa3d0c7b12"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>finishedAllTasks</b> ()</td></tr>
-<tr class="separator:af10e12192267ffe20dafbfaa3d0c7b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_slots_classRemoteDataInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_classRemoteDataInterface')"><img src="closed.png" alt="-"/>&#160;Public Slots inherited from <a class="el" href="classRemoteDataInterface.html">RemoteDataInterface</a></td></tr>
+<tr class="memitem:a0d2c348dbf3b60c0b3e8734e5b2dcd24 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d2c348dbf3b60c0b3e8734e5b2dcd24"></a>
+virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteDataInterface.html#a0d2c348dbf3b60c0b3e8734e5b2dcd24">getUserName</a> ()=0</td></tr>
+<tr class="memdesc:a0d2c348dbf3b60c0b3e8734e5b2dcd24 inherit pub_slots_classRemoteDataInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">After login, getUserName will return the name of the user logged in. <br /></td></tr>
+<tr class="separator:a0d2c348dbf3b60c0b3e8734e5b2dcd24 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf6fcac07b299bd91f9031dd159e44f inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf6fcac07b299bd91f9031dd159e44f"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>closeAllConnections</b> ()=0</td></tr>
+<tr class="separator:a0bf6fcac07b299bd91f9031dd159e44f inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d80d05f6d9f3fb00f202b31d2c3da54 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d80d05f6d9f3fb00f202b31d2c3da54"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>performAuth</b> (QString uname, QString passwd)=0</td></tr>
+<tr class="separator:a9d80d05f6d9f3fb00f202b31d2c3da54 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7caaa82f1a3cc99fcd10e878e96fb786 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7caaa82f1a3cc99fcd10e878e96fb786"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>remoteLS</b> (QString dirPath)=0</td></tr>
+<tr class="separator:a7caaa82f1a3cc99fcd10e878e96fb786 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb8fc7f7c20f3cab35f0d2ba8ab7c428 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb8fc7f7c20f3cab35f0d2ba8ab7c428"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deleteFile</b> (QString toDelete)=0</td></tr>
+<tr class="separator:adb8fc7f7c20f3cab35f0d2ba8ab7c428 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a743d79b6bc86f70b11fbe5834a64e inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30a743d79b6bc86f70b11fbe5834a64e"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>moveFile</b> (QString from, QString to)=0</td></tr>
+<tr class="separator:a30a743d79b6bc86f70b11fbe5834a64e inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272832605ca8054b82c8c3cee4a0c83c inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a272832605ca8054b82c8c3cee4a0c83c"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>copyFile</b> (QString from, QString to)=0</td></tr>
+<tr class="separator:a272832605ca8054b82c8c3cee4a0c83c inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b5a284449206358c3a851b7f26d18b inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88b5a284449206358c3a851b7f26d18b"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>renameFile</b> (QString fullName, QString newName)=0</td></tr>
+<tr class="separator:a88b5a284449206358c3a851b7f26d18b inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e508d85934a0a49ac1e73667b30dafd inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e508d85934a0a49ac1e73667b30dafd"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mkRemoteDir</b> (QString location, QString newName)=0</td></tr>
+<tr class="separator:a9e508d85934a0a49ac1e73667b30dafd inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8550dd1534ec46ee6b2d2d74dd2d9091 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8550dd1534ec46ee6b2d2d74dd2d9091"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>uploadFile</b> (QString location, QString localFileName)=0</td></tr>
+<tr class="separator:a8550dd1534ec46ee6b2d2d74dd2d9091 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80ae81f974fd8d7696184e5dead5f1b9 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80ae81f974fd8d7696184e5dead5f1b9"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>uploadBuffer</b> (QString location, QByteArray fileData, QString newFileName)=0</td></tr>
+<tr class="separator:a80ae81f974fd8d7696184e5dead5f1b9 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e0076e7030ba5340a6ea021e7874a7 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6e0076e7030ba5340a6ea021e7874a7"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>downloadFile</b> (QString localDest, QString remoteName)=0</td></tr>
+<tr class="separator:aa6e0076e7030ba5340a6ea021e7874a7 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda021eae280eea4a01460e352f9d84d inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acda021eae280eea4a01460e352f9d84d"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>downloadBuffer</b> (QString remoteName)=0</td></tr>
+<tr class="separator:acda021eae280eea4a01460e352f9d84d inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6462f49d65d1c6a67e1b613ea245ef inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b6462f49d65d1c6a67e1b613ea245ef"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>runRemoteJob</b> (QString jobName, ParamMap jobParameters, QString remoteWorkingDir, QString indivJobName=&quot;&quot;, QString archivePath=&quot;&quot;)=0</td></tr>
+<tr class="separator:a6b6462f49d65d1c6a67e1b613ea245ef inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4231ddd29822020c58c1f861aea64ca7 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4231ddd29822020c58c1f861aea64ca7"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getListOfJobs</b> ()=0</td></tr>
+<tr class="separator:a4231ddd29822020c58c1f861aea64ca7 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492837dd443c55eee4a3b1aa66e80738 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a492837dd443c55eee4a3b1aa66e80738"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getJobDetails</b> (QString IDstr)=0</td></tr>
+<tr class="separator:a492837dd443c55eee4a3b1aa66e80738 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f557d0fe92c75c1a5514b6378fbd420 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f557d0fe92c75c1a5514b6378fbd420"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>stopJob</b> (QString IDstr)=0</td></tr>
+<tr class="separator:a0f557d0fe92c75c1a5514b6378fbd420 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b4bf93b2b3360b96a3ca42c7bcfcf7 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07b4bf93b2b3360b96a3ca42c7bcfcf7"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deleteJob</b> (QString IDstr)=0</td></tr>
+<tr class="separator:a07b4bf93b2b3360b96a3ca42c7bcfcf7 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25be14d581475cbf3535de1fd828e8cb inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25be14d581475cbf3535de1fd828e8cb"></a>
+virtual RemoteDataInterfaceState&#160;</td><td class="memItemRight" valign="bottom"><b>getInterfaceState</b> ()=0</td></tr>
+<tr class="separator:a25be14d581475cbf3535de1fd828e8cb inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1a94bc871f1a473e5ff22628e781f2 inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d1a94bc871f1a473e5ff22628e781f2"></a>
+static QString&#160;</td><td class="memItemRight" valign="bottom"><b>interpretRequestState</b> (RequestState theState)</td></tr>
+<tr class="separator:a2d1a94bc871f1a473e5ff22628e781f2 inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23073454369a502801bc4a673d6af5f inherit pub_slots_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac23073454369a502801bc4a673d6af5f"></a>
+static QString&#160;</td><td class="memItemRight" valign="bottom"><b>removeDoubleSlashes</b> (QString stringIn)</td></tr>
+<tr class="separator:ac23073454369a502801bc4a673d6af5f inherit pub_slots_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac1ff5f54f9d0212b9f850c825473b9dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1ff5f54f9d0212b9f850c825473b9dc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AgaveHandler</b> (QNetworkAccessManager *netAccessManager, QObject *parent=nullptr)</td></tr>
 <tr class="separator:ac1ff5f54f9d0212b9f850c825473b9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classRemoteDataInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classRemoteDataInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classRemoteDataInterface.html">RemoteDataInterface</a></td></tr>
+<tr class="memitem:a55062db895a74286f5c0d57ec3f024a8 inherit pub_methods_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteDataInterface.html#a55062db895a74286f5c0d57ec3f024a8">RemoteDataInterface</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a55062db895a74286f5c0d57ec3f024a8 inherit pub_methods_classRemoteDataInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brief Constructor description. Brief Constructor description continued.  <a href="#a55062db895a74286f5c0d57ec3f024a8">More...</a><br /></td></tr>
+<tr class="separator:a55062db895a74286f5c0d57ec3f024a8 inherit pub_methods_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -200,12 +258,19 @@ Friends</h2></td></tr>
 <tr class="memitem:a3148bbac0f5a13113fce72487202fe39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3148bbac0f5a13113fce72487202fe39"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>AgaveTaskReply</b></td></tr>
 <tr class="separator:a3148bbac0f5a13113fce72487202fe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header signals_classRemoteDataInterface"><td colspan="2" onclick="javascript:toggleInherit('signals_classRemoteDataInterface')"><img src="closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="classRemoteDataInterface.html">RemoteDataInterface</a></td></tr>
+<tr class="memitem:a5018979a6d9693e529996d1fd9bc501a inherit signals_classRemoteDataInterface"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5018979a6d9693e529996d1fd9bc501a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>connectionStateChanged</b> (RemoteDataInterfaceState newState)</td></tr>
+<tr class="separator:a5018979a6d9693e529996d1fd9bc501a inherit signals_classRemoteDataInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>agaveInterfaces/<a class="el" href="agavehandler_8h_source.html">agavehandler.h</a></li>
-<li>agaveInterfaces/agavehandler.cpp</li>
-</ul>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classAgaveHandler.html" title="The AgaveHandler is a class for communicating with an Agave server over an https connection. ">AgaveHandler</a> is a class for communicating with an Agave server over an https connection. </p>
+<p>Each <a class="el" href="classAgaveHandler.html" title="The AgaveHandler is a class for communicating with an Agave server over an https connection. ">AgaveHandler</a> is one use, from initialization, to login, through multiple remote requests, to logout. If an application wishes to re-login, a new <a class="el" href="classAgaveHandler.html" title="The AgaveHandler is a class for communicating with an Agave server over an https connection. ">AgaveHandler</a> object should be created.</p>
+<p>First, the setAgaveConnectionParams meshod should be invoked, to define some basic Agave parameters, such as the remote tenant name. Then, the performAuth method should be invoked until a successful reply is given. After that, the various remote tasks can be performed. When finished, the closeAllConnections method will logout of the remote Agave server. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

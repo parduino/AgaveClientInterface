@@ -56,7 +56,7 @@ void SelectedFileLabel::connectFileTreeWidget(RemoteFileTree * connectedTree)
         return;
     }
     QObject::connect(myFileTree, SIGNAL(newFileSelected(FileNodeRef)),
-                     this, SLOT(newSelectedItem(FileNodeRef)));
+                     this, SLOT(newSelectedItem(FileNodeRef)), Qt::QueuedConnection);
     newSelectedItem(myFileTree->getSelectedFile());
 }
 

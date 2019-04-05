@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: RemoteDataInterface Class Reference</title>
+<title>SimCenter Agave Client Interface: RemoteDataInterface Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -85,31 +85,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classRemoteDataInterface-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RemoteDataInterface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for RemoteDataInterface:</div>
-<div class="dyncontent">
-<div class="center"><img src="classRemoteDataInterface__inherit__graph.png" border="0" usemap="#RemoteDataInterface_inherit__map" alt="Inheritance graph"/></div>
-<map name="RemoteDataInterface_inherit__map" id="RemoteDataInterface_inherit__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for RemoteDataInterface:</div>
-<div class="dyncontent">
-<div class="center"><img src="classRemoteDataInterface__coll__graph.png" border="0" usemap="#RemoteDataInterface_coll__map" alt="Collaboration graph"/></div>
-<map name="RemoteDataInterface_coll__map" id="RemoteDataInterface_coll__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+
+<p>The <a class="el" href="classRemoteDataInterface.html" title="The RemoteDataInterface is an abstract class for communicating with a remote file and job server over...">RemoteDataInterface</a> is an abstract class for communicating with a remote file and job server over an https connection.  
+ <a href="classRemoteDataInterface.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a0d2c348dbf3b60c0b3e8734e5b2dcd24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d2c348dbf3b60c0b3e8734e5b2dcd24"></a>
-virtual QString&#160;</td><td class="memItemRight" valign="bottom"><b>getUserName</b> ()=0</td></tr>
+virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteDataInterface.html#a0d2c348dbf3b60c0b3e8734e5b2dcd24">getUserName</a> ()=0</td></tr>
+<tr class="memdesc:a0d2c348dbf3b60c0b3e8734e5b2dcd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">After login, getUserName will return the name of the user logged in. <br /></td></tr>
 <tr class="separator:a0d2c348dbf3b60c0b3e8734e5b2dcd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf6fcac07b299bd91f9031dd159e44f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf6fcac07b299bd91f9031dd159e44f"></a>
 virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>closeAllConnections</b> ()=0</td></tr>
@@ -159,6 +150,9 @@ virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#16
 <tr class="memitem:a0f557d0fe92c75c1a5514b6378fbd420"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f557d0fe92c75c1a5514b6378fbd420"></a>
 virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>stopJob</b> (QString IDstr)=0</td></tr>
 <tr class="separator:a0f557d0fe92c75c1a5514b6378fbd420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b4bf93b2b3360b96a3ca42c7bcfcf7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07b4bf93b2b3360b96a3ca42c7bcfcf7"></a>
+virtual <a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deleteJob</b> (QString IDstr)=0</td></tr>
+<tr class="separator:a07b4bf93b2b3360b96a3ca42c7bcfcf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25be14d581475cbf3535de1fd828e8cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25be14d581475cbf3535de1fd828e8cb"></a>
 virtual RemoteDataInterfaceState&#160;</td><td class="memItemRight" valign="bottom"><b>getInterfaceState</b> ()=0</td></tr>
 <tr class="separator:a25be14d581475cbf3535de1fd828e8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,16 +163,42 @@ static QString&#160;</td><td class="memItemRight" valign="bottom"><b>interpretRe
 static QString&#160;</td><td class="memItemRight" valign="bottom"><b>removeDoubleSlashes</b> (QString stringIn)</td></tr>
 <tr class="separator:ac23073454369a502801bc4a673d6af5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a5018979a6d9693e529996d1fd9bc501a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5018979a6d9693e529996d1fd9bc501a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>connectionStateChanged</b> (RemoteDataInterfaceState newState)</td></tr>
+<tr class="separator:a5018979a6d9693e529996d1fd9bc501a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a55062db895a74286f5c0d57ec3f024a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55062db895a74286f5c0d57ec3f024a8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RemoteDataInterface</b> (QObject *parent=nullptr)</td></tr>
+<tr class="memitem:a55062db895a74286f5c0d57ec3f024a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRemoteDataInterface.html#a55062db895a74286f5c0d57ec3f024a8">RemoteDataInterface</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a55062db895a74286f5c0d57ec3f024a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brief Constructor description. Brief Constructor description continued.  <a href="#a55062db895a74286f5c0d57ec3f024a8">More...</a><br /></td></tr>
 <tr class="separator:a55062db895a74286f5c0d57ec3f024a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="remotedatainterface_8h_source.html">remotedatainterface.h</a></li>
-<li>remotedatainterface.cpp</li>
-</ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classRemoteDataInterface.html" title="The RemoteDataInterface is an abstract class for communicating with a remote file and job server over...">RemoteDataInterface</a> is an abstract class for communicating with a remote file and job server over an https connection. </p>
+<p>This class is intended to be subclassed for actual use. At present, the <a class="el" href="classAgaveHandler.html" title="The AgaveHandler is a class for communicating with an Agave server over an https connection. ">AgaveHandler</a> class is the only subclass available. If the SimCenter project is required to used a different file or computing backend, a new subclass will have to be written.</p>
+<p>The performAuth method should be invoked before any of the methods requiring remote access. The closeAllConnections will disconnect from the remote server. <a class="el" href="classRemoteDataInterface.html" title="The RemoteDataInterface is an abstract class for communicating with a remote file and job server over...">RemoteDataInterface</a> objects are designed to be one use. To re-login, destroy the old object and create a new one. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a55062db895a74286f5c0d57ec3f024a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RemoteDataInterface::RemoteDataInterface </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Brief Constructor description. Brief Constructor description continued. </p>
+<p>Detailed Constructor description starts here. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

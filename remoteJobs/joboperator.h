@@ -72,7 +72,6 @@ public:
     QMap<QString, RemoteJobData> getJobsList();
     const RemoteJobData findJobByID(QString idToFind);
 
-    void demandJobDataRefresh();
     bool currentlyRefreshingJobs();
     bool currentlyPerformingJobOperation();
 
@@ -82,6 +81,7 @@ signals:
     void jobOpDone(RequestState opState, QString err_msg);
 
 public slots:
+    void demandJobDataRefresh();
     void interfaceHasNewState(RemoteDataInterfaceState newState);
 
 protected:

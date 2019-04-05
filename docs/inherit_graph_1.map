@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classAgaveTaskGuide.html" title="AgaveTaskGuide" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node1" href="$classFileMetaData.html" title="FileMetaData" alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node2" href="$classFileNodeRef.html" title="FileNodeRef" alt="" coords="153,5,248,32"/>
 </map>

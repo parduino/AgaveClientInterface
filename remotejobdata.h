@@ -54,6 +54,7 @@ public:
     QDateTime getTimeCreated() const;
     QString getState() const;
 
+    void setState(QString newState);
     bool inTerminalState() const;
 
     bool detailsLoaded() const;

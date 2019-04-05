@@ -10,14 +10,14 @@ SOURCES += \
     $$PWD/remoteFiles/filenoderef.cpp \
     $$PWD/remoteFiles/fileoperator.cpp \
     $$PWD/remoteFiles/filetreenode.cpp \
-    $$PWD/remoteFiles/remotefileitem.cpp \
-    $$PWD/remoteFiles/remotefilemodel.cpp \
     $$PWD/remoteFiles/remotefiletree.cpp \
     $$PWD/remoteFiles/selectedfilelabel.cpp \
     $$PWD/remoteJobs/joblistnode.cpp \
     $$PWD/remoteJobs/joboperator.cpp \
     $$PWD/remoteJobs/remotejoblister.cpp \
-    $$PWD/remoteJobs/jobstandarditem.cpp
+    $$PWD/remoteJobs/jobstandarditem.cpp \
+    $$PWD/remoteFiles/filerecursiveoperator.cpp \
+    $$PWD/remoteFiles/filestandarditem.cpp
 
 HEADERS += \
     $$PWD/agaveInterfaces/agavehandler.h \
@@ -29,14 +29,14 @@ HEADERS += \
     $$PWD/remoteFiles/filenoderef.h \
     $$PWD/remoteFiles/fileoperator.h \
     $$PWD/remoteFiles/filetreenode.h \
-    $$PWD/remoteFiles/remotefileitem.h \
-    $$PWD/remoteFiles/remotefilemodel.h \
     $$PWD/remoteFiles/remotefiletree.h \
     $$PWD/remoteFiles/selectedfilelabel.h \
     $$PWD/remoteJobs/joblistnode.h \
     $$PWD/remoteJobs/joboperator.h \
     $$PWD/remoteJobs/remotejoblister.h \
-    $$PWD/remoteJobs/jobstandarditem.h
+    $$PWD/remoteJobs/jobstandarditem.h \
+    $$PWD/remoteFiles/filerecursiveoperator.h \
+    $$PWD/remoteFiles/filestandarditem.h
 
 DISTFILES += \
     $$PWD/doxygen.cfg

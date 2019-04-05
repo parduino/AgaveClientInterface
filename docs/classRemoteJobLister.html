@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: RemoteJobLister Class Reference</title>
+<title>SimCenter Agave Client Interface: RemoteJobLister Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -84,36 +84,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classRemoteJobLister-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RemoteJobLister Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for RemoteJobLister:</div>
-<div class="dyncontent">
-<div class="center"><img src="classRemoteJobLister__inherit__graph.png" border="0" usemap="#RemoteJobLister_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for RemoteJobLister:</div>
-<div class="dyncontent">
-<div class="center"><img src="classRemoteJobLister__coll__graph.png" border="0" usemap="#RemoteJobLister_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:af54eb5de2edc698c7f0908a1802d34c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af54eb5de2edc698c7f0908a1802d34c4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>jobEntryTouched</b> (QModelIndex itemTouched)</td></tr>
+<tr class="separator:af54eb5de2edc698c7f0908a1802d34c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a65c5aa54fa59ae3343af4989e69162f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65c5aa54fa59ae3343af4989e69162f5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>newJobSelected</b> (<a class="el" href="classRemoteJobData.html">RemoteJobData</a> newFileData)</td></tr>
+<tr class="separator:a65c5aa54fa59ae3343af4989e69162f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab53c0085623525d8ff2239c647f6d658"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab53c0085623525d8ff2239c647f6d658"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RemoteJobLister</b> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:ab53c0085623525d8ff2239c647f6d658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f1834246349d283f7a4ba249862bc4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f1834246349d283f7a4ba249862bc4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setOperator</b> (<a class="el" href="classJobOperator.html">JobOperator</a> *myOperator)</td></tr>
-<tr class="separator:a5f1834246349d283f7a4ba249862bc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65ff849f38188604e793dd9f2a8ae67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae65ff849f38188604e793dd9f2a8ae67"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setOperator</b> (<a class="el" href="classJobOperator.html">JobOperator</a> *newOperator)</td></tr>
+<tr class="separator:ae65ff849f38188604e793dd9f2a8ae67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3498e3ad50b2d70bb33d93caa0c26ca0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3498e3ad50b2d70bb33d93caa0c26ca0"></a>
+<a class="el" href="classRemoteJobData.html">RemoteJobData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedJob</b> ()</td></tr>
+<tr class="separator:a3498e3ad50b2d70bb33d93caa0c26ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>remoteJobs/<a class="el" href="remotejoblister_8h_source.html">remotejoblister.h</a></li>
-<li>remoteJobs/remotejoblister.cpp</li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

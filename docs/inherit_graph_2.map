@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classAgaveTaskReply.html" title="AgaveTaskReply" alt="" coords="184,5,307,32"/>
+<area shape="rect" id="node2" href="$classFileOperator.html" title="FileOperator" alt="" coords="153,5,247,32"/>
+<area shape="rect" id="node3" href="$classFileRecursiveOperator.html" title="FileRecursiveOperator" alt="" coords="124,56,276,83"/>
+<area shape="rect" id="node4" href="$classFileTreeNode.html" title="FileTreeNode" alt="" coords="150,107,250,133"/>
+<area shape="rect" id="node5" href="$classJobListNode.html" title="JobListNode" alt="" coords="153,157,247,184"/>
+<area shape="rect" id="node6" href="$classJobOperator.html" title="JobOperator" alt="" coords="153,208,247,235"/>
+<area shape="rect" id="node7" href="$classRemoteDataInterface.html" title="The RemoteDataInterface is an abstract class for communicating with a remote file and job server over..." alt="" coords="127,259,273,285"/>
+<area shape="rect" id="node9" href="$classRemoteDataReply.html" title="RemoteDataReply" alt="" coords="135,309,265,336"/>
+<area shape="rect" id="node8" href="$classAgaveHandler.html" title="The AgaveHandler is a class for communicating with an Agave server over an https connection. " alt="" coords="333,259,437,285"/>
+<area shape="rect" id="node10" href="$classAgaveTaskReply.html" title="AgaveTaskReply" alt="" coords="324,309,447,336"/>
 </map>

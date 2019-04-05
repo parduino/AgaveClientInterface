@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: FileTreeNode Class Reference</title>
+<title>SimCenter Agave Client Interface: FileTreeNode Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -90,21 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">FileTreeNode Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for FileTreeNode:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileTreeNode__inherit__graph.png" border="0" usemap="#FileTreeNode_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for FileTreeNode:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileTreeNode__coll__graph.png" border="0" usemap="#FileTreeNode_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a84f12c1f40fa425fe9709ad24154f904"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84f12c1f40fa425fe9709ad24154f904"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FileTreeNode</b> (FileMetaData contents, <a class="el" href="classFileTreeNode.html">FileTreeNode</a> *parent=nullptr)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FileTreeNode</b> (<a class="el" href="classFileMetaData.html">FileMetaData</a> contents, <a class="el" href="classFileTreeNode.html">FileTreeNode</a> *parent=nullptr)</td></tr>
 <tr class="separator:a84f12c1f40fa425fe9709ad24154f904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42a403f9d581ce91ef339cf8f29d9312"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42a403f9d581ce91ef339cf8f29d9312"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FileTreeNode</b> (QString rootFolderName, <a class="el" href="classFileOperator.html">FileOperator</a> *theFileOperator, QObject *parent=nullptr)</td></tr>
@@ -121,56 +111,49 @@ NodeState&#160;</td><td class="memItemRight" valign="bottom"><b>getNodeState</b>
 <tr class="memitem:ab0427c83fffc68699972730171fe9c1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0427c83fffc68699972730171fe9c1b"></a>
 QByteArray *&#160;</td><td class="memItemRight" valign="bottom"><b>getFileBuffer</b> ()</td></tr>
 <tr class="separator:ab0427c83fffc68699972730171fe9c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a832c30eca14037c5063017a72780996b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a832c30eca14037c5063017a72780996b"></a>
+<a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getParentNode</b> ()</td></tr>
+<tr class="separator:a832c30eca14037c5063017a72780996b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5b1eaee8a516914118bb2921162b28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf5b1eaee8a516914118bb2921162b28"></a>
+QList&lt; <a class="el" href="classFileTreeNode.html">FileTreeNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getChildList</b> ()</td></tr>
+<tr class="separator:abf5b1eaee8a516914118bb2921162b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd1538f4c95aca3778ebac4117b606d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfd1538f4c95aca3778ebac4117b606d"></a>
 <a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getNodeWithName</b> (QString filename)</td></tr>
 <tr class="separator:adfd1538f4c95aca3778ebac4117b606d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b8faf960fef68e0194da32571d5e8a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b8faf960fef68e0194da32571d5e8a4"></a>
 <a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getClosestNodeWithName</b> (QString filename)</td></tr>
 <tr class="separator:a9b8faf960fef68e0194da32571d5e8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a832c30eca14037c5063017a72780996b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a832c30eca14037c5063017a72780996b"></a>
-<a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getParentNode</b> ()</td></tr>
-<tr class="separator:a832c30eca14037c5063017a72780996b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8da7fc4d26eb4d1e8e468e7b9a57a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b8da7fc4d26eb4d1e8e468e7b9a57a7"></a>
 <a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getNodeReletiveToNodeWithName</b> (QString searchPath)</td></tr>
 <tr class="separator:a5b8da7fc4d26eb4d1e8e468e7b9a57a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac447fa56732706f76f2394d196566f12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac447fa56732706f76f2394d196566f12"></a>
+<a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getChildNodeWithName</b> (QString filename)</td></tr>
+<tr class="separator:ac447fa56732706f76f2394d196566f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae59be833331b759727c7d38c3739ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaae59be833331b759727c7d38c3739ae"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isChildOf</b> (<a class="el" href="classFileTreeNode.html">FileTreeNode</a> *possibleParent)</td></tr>
+<tr class="separator:aaae59be833331b759727c7d38c3739ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc3a083f80a8c3278af192c6cda7d24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dc3a083f80a8c3278af192c6cda7d24"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>haveLStask</b> ()</td></tr>
+<tr class="separator:a1dc3a083f80a8c3278af192c6cda7d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acded8484b39722dbad928db3388a4485"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acded8484b39722dbad928db3388a4485"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLStask</b> (<a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *newTask)</td></tr>
+<tr class="separator:acded8484b39722dbad928db3388a4485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6de416825eeef9ac0500cabb748f19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e6de416825eeef9ac0500cabb748f19"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>haveBuffTask</b> ()</td></tr>
+<tr class="separator:a4e6de416825eeef9ac0500cabb748f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6095bdd520ab2d19950b6045f66d0b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6095bdd520ab2d19950b6045f66d0b0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setBuffTask</b> (<a class="el" href="classRemoteDataReply.html">RemoteDataReply</a> *newTask)</td></tr>
+<tr class="separator:ab6095bdd520ab2d19950b6045f66d0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb245a459a5f40d0be3c877b80f66e9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb245a459a5f40d0be3c877b80f66e9c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteFolderContentsData</b> ()</td></tr>
 <tr class="separator:acb245a459a5f40d0be3c877b80f66e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f96a36f4a7f064ae789113f7286f0b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44f96a36f4a7f064ae789113f7286f0b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setFileBuffer</b> (const QByteArray *newFileBuffer)</td></tr>
 <tr class="separator:a44f96a36f4a7f064ae789113f7286f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dc3a083f80a8c3278af192c6cda7d24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dc3a083f80a8c3278af192c6cda7d24"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>haveLStask</b> ()</td></tr>
-<tr class="separator:a1dc3a083f80a8c3278af192c6cda7d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acded8484b39722dbad928db3388a4485"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acded8484b39722dbad928db3388a4485"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLStask</b> (RemoteDataReply *newTask)</td></tr>
-<tr class="separator:acded8484b39722dbad928db3388a4485"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e6de416825eeef9ac0500cabb748f19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e6de416825eeef9ac0500cabb748f19"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>haveBuffTask</b> ()</td></tr>
-<tr class="separator:a4e6de416825eeef9ac0500cabb748f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6095bdd520ab2d19950b6045f66d0b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6095bdd520ab2d19950b6045f66d0b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBuffTask</b> (RemoteDataReply *newTask)</td></tr>
-<tr class="separator:ab6095bdd520ab2d19950b6045f66d0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5b1eaee8a516914118bb2921162b28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf5b1eaee8a516914118bb2921162b28"></a>
-QList&lt; <a class="el" href="classFileTreeNode.html">FileTreeNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getChildList</b> ()</td></tr>
-<tr class="separator:abf5b1eaee8a516914118bb2921162b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac447fa56732706f76f2394d196566f12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac447fa56732706f76f2394d196566f12"></a>
-<a class="el" href="classFileTreeNode.html">FileTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getChildNodeWithName</b> (QString filename)</td></tr>
-<tr class="separator:ac447fa56732706f76f2394d196566f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4ccdb52f886b4f582806c00dcc0912c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4ccdb52f886b4f582806c00dcc0912c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFolder</b> ()</td></tr>
-<tr class="separator:ab4ccdb52f886b4f582806c00dcc0912c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4014481c6a8a00e79d5eb29d8e4efd4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4014481c6a8a00e79d5eb29d8e4efd4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFile</b> ()</td></tr>
-<tr class="separator:af4014481c6a8a00e79d5eb29d8e4efd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaae59be833331b759727c7d38c3739ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaae59be833331b759727c7d38c3739ae"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isChildOf</b> (<a class="el" href="classFileTreeNode.html">FileTreeNode</a> *possibleParent)</td></tr>
-<tr class="separator:aaae59be833331b759727c7d38c3739ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d1bc9db041ecef8375eb2f02004ca85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d1bc9db041ecef8375eb2f02004ca85"></a>
+QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><b>getFirstModelIndex</b> ()</td></tr>
+<tr class="separator:a6d1bc9db041ecef8375eb2f02004ca85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>remoteFiles/<a class="el" href="filetreenode_8h_source.html">filetreenode.h</a></li>
-<li>remoteFiles/filetreenode.cpp</li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -37,7 +37,8 @@
 #define REMOTEFILEWINDOW_H
 
 #include <QTreeView>
-#include <QStandardItem>
+#include <QPersistentModelIndex>
+#include <QHeaderView>
 
 #include "filenoderef.h"
 
@@ -51,7 +52,7 @@ enum class FileColumn : int {FILENAME = 0,
                              MIME_TYPE = 5,
                              PERMISSIONS = 6};
 
-class RemoteFileItem;
+class FileStandardItem;
 class RemoteFileModel;
 enum class RequestState;
 
@@ -64,7 +65,7 @@ public:
 
     FileNodeRef getSelectedFile();
     void selectRowByFile(FileNodeRef toSelect);
-    void setModelLink(FileOperator *theModel);
+    void linkToFileOperator(FileOperator *theModel);
 
 signals:
     void newFileSelected(FileNodeRef newFileData);
@@ -77,7 +78,7 @@ private slots:
     void folderExpanded(QModelIndex itemOpened);
 
 private:
-    void selectRowByItem(QStandardItem *linkedItem);
+    void selectRowByIndex(QModelIndex linkedItem);
 
     FileOperator * myOperator = nullptr;
 };

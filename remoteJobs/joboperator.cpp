@@ -119,7 +119,7 @@ void JobOperator::refreshRunningJobList(RequestState replyState, QList<RemoteJob
         if (jobData.contains((*itr).getID()))
         {
             JobListNode * theItem = jobData.value((*itr).getID());
-            theItem->setData(*itr);
+            theItem->setJobState((*itr).getState());
         }
         else
         {

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: FileOperator Class Reference</title>
+<title>SimCenter Agave Client Interface: FileOperator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -93,16 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">FileOperator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for FileOperator:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileOperator__inherit__graph.png" border="0" usemap="#FileOperator_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for FileOperator:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileOperator__coll__graph.png" border="0" usemap="#FileOperator_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
@@ -118,21 +108,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fileSystemChange</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5e1b12ed69bfaa7cce76782109f3e26e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e1b12ed69bfaa7cce76782109f3e26e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FileOperator</b> (QObject *parent)</td></tr>
-<tr class="separator:a5e1b12ed69bfaa7cce76782109f3e26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58ce4e7c8a1d52f176f09c35da57a997"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58ce4e7c8a1d52f176f09c35da57a997"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetFileData</b> (RemoteDataInterface *parent, QString rootFolder)</td></tr>
-<tr class="separator:a58ce4e7c8a1d52f176f09c35da57a997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eff3860ca928c3b96d0fe8c6d894956"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7eff3860ca928c3b96d0fe8c6d894956"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetFileData</b> ()</td></tr>
-<tr class="separator:a7eff3860ca928c3b96d0fe8c6d894956"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39277b79c364340acca0b35955beb8cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39277b79c364340acca0b35955beb8cf"></a>
-const <a class="el" href="classFileNodeRef.html">FileNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>speculateFileWithName</b> (QString fullPath, bool folder)</td></tr>
-<tr class="separator:a39277b79c364340acca0b35955beb8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40c57cd9ea41abdd0b012b577019c28a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40c57cd9ea41abdd0b012b577019c28a"></a>
-const <a class="el" href="classFileNodeRef.html">FileNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>speculateFileWithName</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;baseNode, QString addedPath, bool folder)</td></tr>
-<tr class="separator:a40c57cd9ea41abdd0b012b577019c28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc115b89c07278d157d473f58b7bcd3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cc115b89c07278d157d473f58b7bcd3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FileOperator</b> (<a class="el" href="classRemoteDataInterface.html">RemoteDataInterface</a> *theInterface, QObject *parent)</td></tr>
+<tr class="separator:a8cc115b89c07278d157d473f58b7bcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd78ac018c6d640cec0cc34e13c13191"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd78ac018c6d640cec0cc34e13c13191"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>connectFileTreeWidget</b> (<a class="el" href="classRemoteFileTree.html">RemoteFileTree</a> *connectedWidget)</td></tr>
+<tr class="separator:afd78ac018c6d640cec0cc34e13c13191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47f111ec03b048afe271f8d1b41c8d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa47f111ec03b048afe271f8d1b41c8d3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>disconnectFileTreeWidget</b> (<a class="el" href="classRemoteFileTree.html">RemoteFileTree</a> *connectedWidget)</td></tr>
+<tr class="separator:aa47f111ec03b048afe271f8d1b41c8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af836a873be21754cb3b6f54abb1acf92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af836a873be21754cb3b6f54abb1acf92"></a>
+const <a class="el" href="classFileNodeRef.html">FileNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>speculateFileWithName</b> (QString fullPath, bool folder, bool loadBuffer=true)</td></tr>
+<tr class="separator:af836a873be21754cb3b6f54abb1acf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cffab417e76820095e9711d9b1c6915"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cffab417e76820095e9711d9b1c6915"></a>
+const <a class="el" href="classFileNodeRef.html">FileNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>speculateFileWithName</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;baseNode, QString addedPath, bool folder, bool loadBuffer=true)</td></tr>
+<tr class="separator:a0cffab417e76820095e9711d9b1c6915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a262cd6bc755b2ee3f754feed7585fbb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a262cd6bc755b2ee3f754feed7585fbb4"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operationIsPending</b> ()</td></tr>
 <tr class="separator:a262cd6bc755b2ee3f754feed7585fbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,30 +162,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendDownloadReq</b> (
 <tr class="memitem:ae4abecddc7fdf0e9b593494840612778"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4abecddc7fdf0e9b593494840612778"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendDownloadBuffReq</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;targetFile)</td></tr>
 <tr class="separator:ae4abecddc7fdf0e9b593494840612778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78422b5e23d071b48e4e63bb9b3d986"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab78422b5e23d071b48e4e63bb9b3d986"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>performingRecursiveDownload</b> ()</td></tr>
-<tr class="separator:ab78422b5e23d071b48e4e63bb9b3d986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4156bdc57cd80b8b583f9254a4289762"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4156bdc57cd80b8b583f9254a4289762"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>enactRecursiveDownload</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;targetFolder, QString containingDestFolder)</td></tr>
-<tr class="separator:a4156bdc57cd80b8b583f9254a4289762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aece029d27a6be194ad56720937699bac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aece029d27a6be194ad56720937699bac"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>performingRecursiveUpload</b> ()</td></tr>
-<tr class="separator:aece029d27a6be194ad56720937699bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ba710ed400c26c872211962967f7c58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ba710ed400c26c872211962967f7c58"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>enactRecursiveUpload</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;containingDestFolder, QString localFolderToCopy)</td></tr>
-<tr class="separator:a6ba710ed400c26c872211962967f7c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a471ddd3a114f84fc2af1e5e66db11b27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a471ddd3a114f84fc2af1e5e66db11b27"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>abortRecursiveProcess</b> ()</td></tr>
-<tr class="separator:a471ddd3a114f84fc2af1e5e66db11b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dc5dc672966a65d682ecfc701a7fa85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7dc5dc672966a65d682ecfc701a7fa85"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendCompressReq</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;selectedFolder)</td></tr>
-<tr class="separator:a7dc5dc672966a65d682ecfc701a7fa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360eb8800516fdc809e611ac8e753a19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a360eb8800516fdc809e611ac8e753a19"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendDecompressReq</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;selectedFolder)</td></tr>
-<tr class="separator:a360eb8800516fdc809e611ac8e753a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa61bc034bc14964589261d35082de6dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa61bc034bc14964589261d35082de6dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>quickInfoPopup</b> (QString infoText)</td></tr>
-<tr class="separator:aa61bc034bc14964589261d35082de6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96aff8f4ce8af75695def6ad5f091cf2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96aff8f4ce8af75695def6ad5f091cf2"></a>
+<a class="el" href="classFileRecursiveOperator.html">FileRecursiveOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRecursiveOp</b> ()</td></tr>
+<tr class="separator:a96aff8f4ce8af75695def6ad5f091cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a792b2d37fd1157aa9623e930a9926f0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a792b2d37fd1157aa9623e930a9926f0d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>deletePopup</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;toDelete)</td></tr>
 <tr class="separator:a792b2d37fd1157aa9623e930a9926f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,9 +201,15 @@ QList&lt; <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &gt;&#160;<
 <tr class="memitem:a90f5a8b652805f7871ec27ab79942d1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90f5a8b652805f7871ec27ab79942d1f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>nodeIsRoot</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;theFile)</td></tr>
 <tr class="separator:a90f5a8b652805f7871ec27ab79942d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092a912fa7bc30df0e6412ee7de4de79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a092a912fa7bc30df0e6412ee7de4de79"></a>
+QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><b>getModelIndexByFile</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;theFile)</td></tr>
+<tr class="separator:a092a912fa7bc30df0e6412ee7de4de79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3508a293312847f834da385f30ba101"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3508a293312847f834da385f30ba101"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>enactFolderRefresh</b> (const <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &amp;selectedNode, bool clearData=false)</td></tr>
 <tr class="separator:ae3508a293312847f834da385f30ba101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22da7723156cd0f1e48695d86b28816"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad22da7723156cd0f1e48695d86b28816"></a>
+QStandardItemModel *&#160;</td><td class="memItemRight" valign="bottom"><b>getStandardModel</b> ()</td></tr>
+<tr class="separator:ad22da7723156cd0f1e48695d86b28816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -245,10 +220,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileTreeNode</b></td
 class&#160;</td><td class="memItemRight" valign="bottom"><b>FileNodeRef</b></td></tr>
 <tr class="separator:a426773d69a0c2e8387ef5fb12d985a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>remoteFiles/<a class="el" href="fileoperator_8h_source.html">fileoperator.h</a></li>
-<li>remoteFiles/fileoperator.cpp</li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

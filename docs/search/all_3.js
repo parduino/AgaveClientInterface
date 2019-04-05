@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['linkedstandarditem',['LinkedStandardItem',['../classLinkedStandardItem.html',1,'']]]
+  ['joblistnode',['JobListNode',['../classJobListNode.html',1,'']]],
+  ['joboperator',['JobOperator',['../classJobOperator.html',1,'']]],
+  ['jobstandarditem',['JobStandardItem',['../classJobStandardItem.html',1,'']]]
 ];

@@ -58,8 +58,10 @@ public:
     explicit AgaveTaskReply(AgaveTaskGuide * theGuide, RequestState passThruErrorState, AgaveHandler * theManager, QObject *parent = nullptr);
     ~AgaveTaskReply();
 
-    QMap<QString, QByteArray> *getTaskParamList();
     virtual void setAsUnconnectedReply();
+
+protected:
+    QMap<QString, QByteArray> *getTaskParamList();
 
     //-------------------------------------------------
     //Agave specific:

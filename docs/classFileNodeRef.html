@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Agave Client Interface: FileNodeRef Class Reference</title>
+<title>SimCenter Agave Client Interface: FileNodeRef Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Agave Client Interface
-   &#160;<span id="projectnumber">1.0.0</span>
+   <div id="projectname">SimCenter Agave Client Interface
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
    <div id="projectbrief">This repo is to be used for other SimCenter Projects which communicate with an Agave server.</div>
   </td>
@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -65,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -93,16 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">FileNodeRef Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for FileNodeRef:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileNodeRef__inherit__graph.png" border="0" usemap="#FileNodeRef_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for FileNodeRef:</div>
-<div class="dyncontent">
-<div class="center"><img src="classFileNodeRef__coll__graph.png" border="0" usemap="#FileNodeRef_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -142,15 +132,62 @@ QList&lt; <a class="el" href="classFileNodeRef.html">FileNodeRef</a> &gt;&#160;<
 <tr class="memitem:a61a8507d37d73ad922e12d625e2a040f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61a8507d37d73ad922e12d625e2a040f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRootNode</b> () const </td></tr>
 <tr class="separator:a61a8507d37d73ad922e12d625e2a040f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59a4b9fbedf285510b078e714eba527"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa59a4b9fbedf285510b078e714eba527"></a>
+QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><b>getFirstModelIndex</b> () const </td></tr>
+<tr class="separator:aa59a4b9fbedf285510b078e714eba527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4ed66caa35254a10ad382a5e13fc696"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4ed66caa35254a10ad382a5e13fc696"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>enactFolderRefresh</b> (bool clearData=false) const </td></tr>
 <tr class="separator:ac4ed66caa35254a10ad382a5e13fc696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFileMetaData"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classFileMetaData')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classFileMetaData.html">FileMetaData</a></td></tr>
+<tr class="memitem:aa7597efcd4ad61f509b2ac703c14e9d0 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7597efcd4ad61f509b2ac703c14e9d0"></a>
+<a class="el" href="classFileMetaData.html">FileMetaData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classFileMetaData.html">FileMetaData</a> &amp;toCopy)</td></tr>
+<tr class="separator:aa7597efcd4ad61f509b2ac703c14e9d0 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75617da7558a52df4dcf4d2a2cef65fe inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75617da7558a52df4dcf4d2a2cef65fe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>copyDataFrom</b> (const <a class="el" href="classFileMetaData.html">FileMetaData</a> &amp;toCopy)</td></tr>
+<tr class="separator:a75617da7558a52df4dcf4d2a2cef65fe inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76772eff5116245472bd05d2fde05217 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76772eff5116245472bd05d2fde05217"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFullFilePath</b> (QString fullPath)</td></tr>
+<tr class="separator:a76772eff5116245472bd05d2fde05217 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401306d9b7b31bd1cfcfb5a000eec2e8 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a401306d9b7b31bd1cfcfb5a000eec2e8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSize</b> (int newSize)</td></tr>
+<tr class="separator:a401306d9b7b31bd1cfcfb5a000eec2e8 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72d92dc677d060502311fcb0ce03ef71 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72d92dc677d060502311fcb0ce03ef71"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setType</b> (FileType newType)</td></tr>
+<tr class="separator:a72d92dc677d060502311fcb0ce03ef71 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72669761a2945acb27caabc1cc61f1f inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af72669761a2945acb27caabc1cc61f1f"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getFullPath</b> () const </td></tr>
+<tr class="separator:af72669761a2945acb27caabc1cc61f1f inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1710e6674ac8843a591b292ec25f795 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1710e6674ac8843a591b292ec25f795"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getFileName</b> () const </td></tr>
+<tr class="separator:ac1710e6674ac8843a591b292ec25f795 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35972e19af41d46ac920c45a1af4f3ba inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35972e19af41d46ac920c45a1af4f3ba"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getContainingPath</b> () const </td></tr>
+<tr class="separator:a35972e19af41d46ac920c45a1af4f3ba inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed513e9ea375b2b07475e64db67b7bb inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ed513e9ea375b2b07475e64db67b7bb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> () const </td></tr>
+<tr class="separator:a7ed513e9ea375b2b07475e64db67b7bb inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec411c434774277a2d5c948a8cd03db inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acec411c434774277a2d5c948a8cd03db"></a>
+FileType&#160;</td><td class="memItemRight" valign="bottom"><b>getFileType</b> () const </td></tr>
+<tr class="separator:acec411c434774277a2d5c948a8cd03db inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb17843257f0c70a417850d24f2097c4 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb17843257f0c70a417850d24f2097c4"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>getFileTypeString</b> () const </td></tr>
+<tr class="separator:abb17843257f0c70a417850d24f2097c4 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9504e464140c388a3eaf99d4e5f0286 inherit pub_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9504e464140c388a3eaf99d4e5f0286"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isNil</b> () const </td></tr>
+<tr class="separator:aa9504e464140c388a3eaf99d4e5f0286 inherit pub_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af29f0304ee97da397e24ccfebfd66f4d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af29f0304ee97da397e24ccfebfd66f4d"></a>
 static <a class="el" href="classFileNodeRef.html">FileNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nil</b> ()</td></tr>
 <tr class="separator:af29f0304ee97da397e24ccfebfd66f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classFileMetaData"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classFileMetaData')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classFileMetaData.html">FileMetaData</a></td></tr>
+<tr class="memitem:aca283e45bd155e8585f4aa2f7f16f42d inherit pub_static_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca283e45bd155e8585f4aa2f7f16f42d"></a>
+static QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>getPathNameList</b> (QString fullPath)</td></tr>
+<tr class="separator:aca283e45bd155e8585f4aa2f7f16f42d inherit pub_static_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9d5d37516cd2a53ff31b608ad8d041 inherit pub_static_methods_classFileMetaData"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d9d5d37516cd2a53ff31b608ad8d041"></a>
+static QString&#160;</td><td class="memItemRight" valign="bottom"><b>cleanPathSlashes</b> (QString fullPath)</td></tr>
+<tr class="separator:a5d9d5d37516cd2a53ff31b608ad8d041 inherit pub_static_methods_classFileMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -176,10 +213,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileOperator</b></td
 class&#160;</td><td class="memItemRight" valign="bottom"><b>FileTreeNode</b></td></tr>
 <tr class="separator:a9ea69bba6a91b6fb18a5fc5a82598228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>remoteFiles/<a class="el" href="filenoderef_8h_source.html">filenoderef.h</a></li>
-<li>remoteFiles/filenoderef.cpp</li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

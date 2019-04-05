@@ -39,6 +39,7 @@
 #include "filemetadata.h"
 
 #include <QLoggingCategory>
+#include <QStandardItem>
 
 enum class NodeState;
 class FileOperator;
@@ -63,6 +64,8 @@ public:
     FileNodeRef getParent() const;
     QList<FileNodeRef> getChildList() const;
     bool isRootNode() const;
+
+    QPersistentModelIndex getFirstModelIndex() const;
 
     void enactFolderRefresh(bool clearData = false) const;
 

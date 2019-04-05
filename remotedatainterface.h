@@ -33,6 +33,19 @@
 // Contributors:
 // Written by Peter Sempolinski, for the Natural Hazard Modeling Laboratory, director: Ahsan Kareem, at Notre Dame
 
+/*! \mainpage My Personal Index Page
+ *
+ * \section intro_sec Introduction
+ *
+ * This is the introduction.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
 #ifndef REMOTEDATAINTERFACE_H
 #define REMOTEDATAINTERFACE_H
 
@@ -102,14 +115,27 @@ signals:
     void haveDeletedJob(RequestState replyState);
 };
 
+/*! \brief The RemoteDataInterface is an abstract class for communicating with a remote file and job server over an https connection.
+ *
+ *  This class is intended to be subclassed for actual use. At present, the AgaveHandler class is the only subclass available. If the SimCenter project is required to used a different file or computing backend, a new subclass will have to be written.
+ *
+ *  The performAuth method should be invoked before any of the methods requiring remote access. The closeAllConnections will disconnect from the remote server. RemoteDataInterface objects are designed to be one use. To re-login, destroy the old object and create a new one.
+ */
 class RemoteDataInterface : public QObject
 {
     Q_OBJECT
 
 public:
-    RemoteDataInterface(QObject * parent = nullptr);
+    /*! \brief Brief Constructor description.
+     *         Brief Constructor description continued.
+     *
+     *  Detailed Constructor description starts here.
+     */
+    RemoteDataInterface(QObject * parent = nullptr); 
 
 public slots:
+    /*! \brief After login, getUserName will return the name of the user logged in.
+     */
     virtual QString getUserName() = 0;
 
     //Defaults to directory root,
