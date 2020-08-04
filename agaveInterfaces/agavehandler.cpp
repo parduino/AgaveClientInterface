@@ -513,6 +513,7 @@ RemoteDataReply * AgaveHandler::runRemoteJob(QString jobName, ParamMap jobParame
     QJsonValue paramListValue(paramList);
     rootObject.insert("inputs",inputListValue);
     rootObject.insert("parameters",paramListValue);
+    rootObject.insert("archive", true);
     rawJSONinput.setObject(rootObject);
 
     taskVars.insert("rawJSONinput", rawJSONinput.toJson());
@@ -853,7 +854,7 @@ void AgaveHandler::setupTaskGuideList()
     toInsert->setHeaderType(AuthHeaderType::TOKEN);
     insertAgaveTaskGuide(toInsert);
 
-    toInsert = new AgaveTaskGuide("agaveAppStart", AgaveRequestType::AGAVE_PIPE_UPLOAD);
+    toInsert = new AgaveTaskGuide("agaveAppStart", AgaveRequestType::AGAVE_JSON_POST);
     toInsert->setURLsuffix(QString("/jobs/v2"));
     toInsert->setHeaderType(AuthHeaderType::TOKEN);
     insertAgaveTaskGuide(toInsert);
@@ -1298,6 +1299,11 @@ QNetworkReply * AgaveHandler::distillRequestData(AgaveTaskGuide * taskGuide, QMa
     {
         return finalizeAgaveRequest(taskGuide, taskGuide->getArgAndURLsuffix(varList), authHeader);
     }
+    else if (taskGuide->getRequestType() == AgaveRequestType::AGAVE_JSON_POST)
+    {
+        return finalizeAgaveRequest(taskGuide, taskGuide->getArgAndURLsuffix(varList),
+                         authHeader, varList->value("rawJSONinput"));
+    }
     else
     {
         qCDebug(remoteInterface, "ERROR: Non-existant Agave request type requested.");
@@ -1373,6 +1379,11 @@ QNetworkReply * AgaveHandler::finalizeAgaveRequest(AgaveTaskGuide * theGuide, QS
 
         //Following line insures Mulipart object deleted when the network reply is
         fileUpload->setParent(clientReply);
+    }
+    else if (theGuide->getRequestType() == AgaveRequestType::AGAVE_JSON_POST)
+    {
+        clientRequest->setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/json"));
+        clientReply = networkHandle->post(*clientRequest, postData);
     }
 
     QObject::connect(clientReply, SIGNAL(finished()), this, SLOT(finishedOneTask()), Qt::QueuedConnection);
